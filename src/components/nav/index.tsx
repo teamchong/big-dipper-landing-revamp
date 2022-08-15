@@ -9,15 +9,17 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
   const { isIcon, isMenu, toggleHamburgerMenu } = useNav();
 
   return (
-    <div>
-      <StyledSectionLimit>
-        <div className="wrapper">
-          <BDLogo className="logo" />
-          <HamburgerIcon toggleHamburgerMenu={toggleHamburgerMenu} isIcon={isIcon} />
-        </div>
-        <DropdownMenu isMenu={isMenu} />
-      </StyledSectionLimit>
-    </div>
+    <StyledSectionLimit>
+      <div className="wrapper">
+        <BDLogo className="logo" />
+        <HamburgerIcon
+          toggleHamburgerMenu={toggleHamburgerMenu}
+          isIcon={isIcon}
+          sx={{ display: { md: 'none' } }}
+        />
+      </div>
+      <DropdownMenu isMenu={isMenu} />
+    </StyledSectionLimit>
   );
 };
 
