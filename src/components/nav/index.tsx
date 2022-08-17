@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FC, HTMLAttributes } from 'react';
 import Link from 'next/link';
 import { HOME } from '@utils/links';
@@ -19,7 +20,9 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
     <StyledSectionLimit>
       <Wrapper>
         <Link href={HOME}>
-          <StyledDBLogo className="logo" />
+          <a>
+            <StyledDBLogo className="logo" />
+          </a>
         </Link>
         <StyledHamburgerIcon
           toggleHamburgerMenu={toggleHamburgerMenu}
