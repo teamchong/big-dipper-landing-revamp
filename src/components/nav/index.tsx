@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FC, HTMLAttributes } from 'react';
 import Link from 'next/link';
 import { HOME } from '@utils/links';
@@ -19,8 +18,8 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
   return (
     <StyledSectionLimit>
       <Wrapper>
-        <Link href={HOME}>
-          <a>
+        <Link href={HOME} passHref>
+          <a href="/#">
             <StyledDBLogo className="logo" />
           </a>
         </Link>
