@@ -29,7 +29,7 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
           isIcon={isIcon}
           sx={{ display: isMenu ? 'none' : undefined }}
         />
-        <StyledMenuBar>
+        <StyledMenuBar className="menubar">
           <MenuItems />
         </StyledMenuBar>
       </Wrapper>
