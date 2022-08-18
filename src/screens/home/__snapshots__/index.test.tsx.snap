@@ -209,7 +209,7 @@ exports[`Dummy Test matches snapshot 1`] = `
   margin-top: 16px;
   background: #3c52af none;
   border-radius: 16px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .emotion-5 .submenu-container .MuiButtonBase-root {
@@ -570,6 +570,7 @@ exports[`Dummy Test matches snapshot 1`] = `
         >
           <span
             class="logo emotion-3"
+            height="36"
           />
         </a>
         <button
