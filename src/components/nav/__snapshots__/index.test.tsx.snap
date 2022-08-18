@@ -401,6 +401,7 @@ exports[`Nav matches snapshot 1`] = `
       >
         <span
           class="logo emotion-2"
+          height="36"
         />
       </a>
       <button

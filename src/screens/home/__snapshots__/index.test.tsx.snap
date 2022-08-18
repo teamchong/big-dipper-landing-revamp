@@ -692,6 +692,7 @@ exports[`Dummy Test matches snapshot 1`] = `
         >
           <span
             class="logo emotion-3"
+            height="36"
           />
         </a>
         <button

@@ -20,7 +20,7 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
       <Wrapper>
         <Link href={HOME} passHref>
           <a href="/#">
-            <StyledDBLogo className="logo" />
+            <StyledDBLogo className="logo" height={36} />
           </a>
         </Link>
         <StyledHamburgerIcon
