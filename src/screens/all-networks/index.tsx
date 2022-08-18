@@ -3,33 +3,21 @@ import {
   FC, useMemo, useEffect, useState,
 } from 'react';
 import { Layout, SectionBox } from '@components';
-import Slider from 'react-slick';
 import { Box, Typography, Fab } from '@mui/material';
-import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
-import { StyledSectionLimit, StyledImageBox } from './styles';
-import {
-  Slide1, Slide2, SearchBox, NetworkBox,
-} from './components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { HomeProps } from './types';
-
-const settings = {
-  dots: true,
-  slidesToScroll: 1,
-  slidesToShow: 1,
-};
+import { StyledSectionLimit } from './styles';
+import { SearchBox, NetworkBox } from './components';
+import { AllNetworksProps } from './types';
 
 const handleScrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-const Home: FC<HomeProps> = ({ networkList }) => {
+const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
   const [networks, setNetworks] = useState(networkList ?? []);
   useEffect(() => {
     loadNetworkList().then((result) => setNetworks(result));
   }, []);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('all-networks');
   const options = useMemo(() => {
     const list = networks
       .filter((n) => n.links[0])
@@ -44,26 +32,9 @@ const Home: FC<HomeProps> = ({ networkList }) => {
   return (
     <Layout>
       <SectionBox sx={{ padding: '0', overflow: 'visible' }}>
-        <StyledSectionLimit className="logo">
-          <Box className="slider">
-            <Slider {...settings}>
-              <Slide1 />
-              <Slide2 />
-            </Slider>
-          </Box>
-          <StyledImageBox>
-            <Image
-              src="/images/big-dipper-transparent.png"
-              alt="Big Dipper"
-              layout="intrinsic"
-              width="482"
-              height="452"
-            />
-          </StyledImageBox>
-        </StyledSectionLimit>
         <StyledSectionLimit className="content">
           <Box className="searchBar">
-            <Typography variant="h3">{t('supportedNetworks')}</Typography>
+            <Typography variant="h3">{t('allNetworks')}</Typography>
             <SearchBox options={options} />
           </Box>
         </StyledSectionLimit>
@@ -82,4 +53,4 @@ const Home: FC<HomeProps> = ({ networkList }) => {
   );
 };
 
-export default Home;
+export default AllNetworks;

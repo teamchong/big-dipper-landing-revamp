@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
 import { ComponentProps } from 'react';
+import { NextPage } from 'next';
 import loadNetworkList from '@utils/load-network-list';
-import HomePage from '../screens/home';
+import AllNetworksPage from '../screens/all-networks';
 
 /**
  * It returns an object with a `props` property that contains the `networkList` property
@@ -15,8 +15,8 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage<ComponentProps<typeof HomePage>> = ({ networkList }) => (
-  <HomePage networkList={networkList} />
+const AllNetworks: NextPage<ComponentProps<typeof AllNetworksPage>> = ({ networkList }) => (
+  <AllNetworksPage networkList={networkList} />
 );
 
-export default Home;
+export default AllNetworks;
