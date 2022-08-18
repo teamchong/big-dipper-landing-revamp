@@ -22,7 +22,7 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
           href={HOME}
           passHref
         >
-          <a href="/#">
+          <a href="/">
             <StyledDBLogo className="logo" height={36} />
           </a>
         </Link>
