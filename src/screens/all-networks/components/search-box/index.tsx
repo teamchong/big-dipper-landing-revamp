@@ -5,7 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
-import Link from 'next/link';
+import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import type { SearchBoxProps } from './types';
 import { StyledAutocomplete, StyledPopper } from './styles';
 
@@ -19,20 +19,29 @@ const addSearch = (InputProps: ComponentProps<typeof TextField>['InputProps']) =
 };
 
 const renderOption = (props: HTMLAttributes<HTMLLIElement>, option: unknown) => {
-  const { onClick: _, ...rest } = props;
-  const { label, logo, link } = option as { label: string; logo: string; link: NetworkLink };
+  const { network } = option as { network: Network };
+  const url = getUrlFromNetwork(network);
   return (
-    <Link href={link.url} key={label}>
-      <MenuItem {...rest} title={link.url}>
-        <Image alt={label} src={logo} width="16" height="16" unoptimized />
-        {label}
-      </MenuItem>
-    </Link>
+    <MenuItem {...props} title={url}>
+      <Image alt={network.name} src={network.logo} width="16" height="16" unoptimized />
+      {network.name}
+    </MenuItem>
   );
 };
 
-const SearchBox: FC<SearchBoxProps> = ({ options }) => {
+const handleChange: ComponentProps<typeof StyledAutocomplete>['onChange'] = (_event, value) => {
+  if (value) {
+    const { network } = value as { network: Network };
+    const url = getUrlFromNetwork(network);
+    if (url) {
+      window.open(url, '_top');
+    }
+  }
+};
+
+const SearchBox: FC<SearchBoxProps> = ({ networks }) => {
   const { t } = useTranslation('common');
+  const options = networks.map((network) => ({ label: network.name, network }));
   return (
     <StyledAutocomplete
       popupIcon={null}
@@ -47,6 +56,7 @@ const SearchBox: FC<SearchBoxProps> = ({ options }) => {
           InputProps={addSearch(InputProps)}
         />
       )}
+      onChange={handleChange}
     />
   );
 };

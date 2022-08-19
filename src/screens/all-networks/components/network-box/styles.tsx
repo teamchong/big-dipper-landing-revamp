@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import { alpha } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const StyledBox = styled(Box)(({ theme }) => ({
@@ -26,12 +25,53 @@ export const StyledBox = styled(Box)(({ theme }) => ({
       position: 'absolute',
       display: 'none',
       zIndex: 1,
-      backgroundColor: alpha(theme.palette.background.mobileMenu, 0.99),
+      backgroundColor: theme.palette.background.mobileMenu,
       color: theme.palette.text.primary,
       borderRadius: theme.spacing(2),
-      padding: theme.spacing(4),
+      padding: theme.spacing(2),
       pointerEvents: 'none',
+      flexFlow: 'column nowrap',
+      gap: theme.spacing(1),
+      '& > .MuiBox-root:nth-of-type(1)': {
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        gap: theme.spacing(1),
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        fontWeight: theme.typography.fontWeightBold,
+        '& img': {
+          background: theme.palette.common.white,
+          borderRadius: '100%',
+          border: `${theme.spacing(0.5)} solid ${theme.palette.common.white} !important`,
+        },
+      },
+      '& > .MuiBox-root:nth-of-type(2)': {
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        justifyContent: 'space-between',
+        gap: theme.spacing(1),
+        '& > .MuiBox-root': {
+          display: 'flex',
+          flexFlow: 'row nowrap',
+          justifyContent: 'space-between',
+          gap: theme.spacing(1),
+          alignItems: 'center',
+          '& > .MuiBox-root': {
+            flex: '1 0 auto',
+          },
+          '& > .MuiBox-root:nth-of-type(1)': {
+            fontWeight: theme.typography.fontWeightBold,
+            textAlign: 'left',
+          },
+          '& > .MuiBox-root:nth-of-type(2)': {
+            textAlign: 'right',
+          },
+        },
+      },
     },
+  },
+  '& a:hover': {
+    opacity: 0.95,
   },
   '& a:hover .popover': {
     display: 'flex',

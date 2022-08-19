@@ -17,7 +17,7 @@ export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
 
 export const StyledPopper = styled(Popper)(({ theme }) => ({
   '& .MuiPaper-root': {
-    backgroundColor: alpha(theme.palette.background.mobileMenu, 0.95),
+    backgroundColor: alpha(theme.palette.background.mobileMenu, 0.9),
     borderRadius: theme.spacing(1),
     zIndex: 1,
   },
@@ -34,7 +34,9 @@ export const StyledPopper = styled(Popper)(({ theme }) => ({
     },
   },
   '& img': {
-    background: '#fff',
+    background: theme.palette.common.white,
     borderRadius: '100%',
+    padding: theme.spacing(0.2),
+    border: `${theme.spacing(0.2)} solid ${theme.palette.common.white} !important`,
   },
 }));

@@ -1,1 +1,1 @@
-export type NetworkBoxProps = { label: string; logo: string; link: NetworkLink };
+export type NetworkBoxProps = { network: Network };
