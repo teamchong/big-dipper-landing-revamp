@@ -1,6 +1,6 @@
-import { FC, HTMLAttributes } from 'react';
-import { Typography } from '@mui/material';
-import { ContentType } from '../../types';
+import type { FC, HTMLAttributes } from 'react';
+import Typography from '@mui/material/Typography';
+import type { ContentType } from '../../types';
 import { StyledContentBox } from './styles';
 
 const Content: FC<ContentType & HTMLAttributes<HTMLElement>> = ({ className, content }) => {

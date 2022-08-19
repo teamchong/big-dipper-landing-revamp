@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import BDLogo from '@assets/big-dipper-red.svg';
 import SectionLimit from '../section-limit';
 import HamburgerIcon from './components/hamburger-icon';

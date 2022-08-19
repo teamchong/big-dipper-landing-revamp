@@ -1,12 +1,12 @@
 import useTranslation from 'next-translate/useTranslation';
-import {
-  FC, ComponentProps, HTMLAttributes,
-} from 'react';
-import { TextField, InputAdornment, MenuItem } from '@mui/material';
+import type { FC, HTMLAttributes, ComponentProps } from 'react';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SearchBoxProps } from './types';
+import type { SearchBoxProps } from './types';
 import { StyledAutocomplete, StyledPopper } from './styles';
 
 const addSearch = (InputProps: ComponentProps<typeof TextField>['InputProps']) => {

@@ -1,10 +1,12 @@
 import useTranslation from 'next-translate/useTranslation';
-import {
-  FC, useMemo, useEffect, useState,
-} from 'react';
-import { Layout, SectionBox } from '@components';
+import type { FC } from 'react';
+import { useMemo, useEffect, useState } from 'react';
+import Layout from '@src/components/layout';
+import SectionBox from '@src/components/section-box';
 import Slider from 'react-slick';
-import { Box, Typography, Fab } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
 import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
@@ -14,7 +16,7 @@ import {
 } from './components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { HomeProps } from './types';
+import type { HomeProps } from './types';
 
 const settings = {
   dots: true,

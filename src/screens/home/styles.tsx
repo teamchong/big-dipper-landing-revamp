@@ -1,6 +1,6 @@
 import { keyframes, styled } from '@mui/material/styles';
-import { Box } from '@mui/material';
-import { SectionLimit } from '@components';
+import Box from '@mui/material/Box';
+import SectionLimit from '@src/components/section-limit';
 
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   '&.logo': {

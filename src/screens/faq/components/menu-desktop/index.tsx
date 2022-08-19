@@ -1,7 +1,7 @@
-import { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { Button } from '@mui/material';
-import { MenuType } from '../../types';
+import Button from '@mui/material/Button';
+import type { MenuType } from '../../types';
 import { StyledDiv } from './styles';
 
 const MenuDesktop: FC<MenuType & HTMLAttributes<HTMLElement>> = ({

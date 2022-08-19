@@ -1,6 +1,6 @@
-import {
-  Autocomplete, Popper, styled, alpha,
-} from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
+import Popper from '@mui/material/Popper';
+import { styled, alpha } from '@mui/material';
 
 export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
   width: '100%',

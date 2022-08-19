@@ -1,7 +1,9 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
-import { Typography } from '@mui/material';
-import { Layout, SectionBox, ContentBox } from '@components';
+import Typography from '@mui/material/Typography';
+import Layout from '@src/components/layout';
+import SectionBox from '@src/components/section-box';
+import ContentBox from '@src/components/content-box';
 import { StyledSectionLimit } from './styles';
 
 const About = () => {

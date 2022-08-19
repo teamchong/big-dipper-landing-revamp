@@ -1,8 +1,11 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
-import { Typography, Button } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import CopyIcon from '@assets/copy.svg';
-import { Layout, SectionBox, ContentBox } from '@components';
+import Layout from '@src/components/layout';
+import ContentBox from '@src/components/content-box';
+import SectionBox from '@src/components/section-box';
 import { StyledSectionLimit } from './styles';
 import { addresses } from './utils';
 import { useDonation } from './hooks';

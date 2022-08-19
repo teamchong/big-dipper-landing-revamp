@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as R from 'ramda';
+import mergeDeepLeft from 'ramda/src/mergeDeepLeft';
 
 export const useNav = () => {
   const [state, setState] = useState<{
@@ -11,7 +11,7 @@ export const useNav = () => {
   });
 
   const handleSetState = (stateChange: typeof state) => {
-    setState((prevState) => R.mergeDeepLeft(stateChange, prevState));
+    setState((prevState) => mergeDeepLeft(stateChange, prevState));
   };
 
   const toggleHamburgerMenu = () => {

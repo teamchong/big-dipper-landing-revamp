@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FAQType } from './types';
+import type { FAQType } from './types';
 
 export const useFAQ = () => {
   const [state, setState] = useState<FAQType>({

@@ -5,7 +5,7 @@ import {
   GithubIcon,
 } from '@icons';
 import * as LINKS from '@utils/links';
-import { LinkType, IconType } from './types';
+import type { LinkType, IconType } from './types';
 
 export const bdLinks: LinkType[] = [
   {

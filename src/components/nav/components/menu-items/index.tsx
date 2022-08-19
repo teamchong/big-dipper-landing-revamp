@@ -1,13 +1,16 @@
-import { FC, useState, useCallback } from 'react';
+import type { FC } from 'react';
+import { useState, useCallback } from 'react';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Box, MenuList, ListItemText } from '@mui/material';
+import Box from '@mui/material/Box';
+import MenuList from '@mui/material/MenuList';
+import ListItemText from '@mui/material/ListItemText';
 import useTranslation from 'next-translate/useTranslation';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledListItemButton } from './styles';
-import { MenuItemProps, MenuItemLinkProps } from './types';
+import type { MenuItemProps, MenuItemLinkProps } from './types';
 import { getMenuItems } from './utils';
 
 const MenuItemLink: FC<MenuItemLinkProps> = ({ menuKey, url, isSubmenu }) => {

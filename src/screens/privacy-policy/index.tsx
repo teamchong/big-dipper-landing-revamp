@@ -1,7 +1,9 @@
 import { Fragment } from 'react';
 import useTranslation from 'next-translate/useTranslation';
-import { Typography } from '@mui/material';
-import { Layout, SectionBox, ContentBox } from '@components';
+import Typography from '@mui/material/Typography';
+import Layout from '@src/components/layout';
+import ContentBox from '@src/components/content-box';
+import SectionBox from '@src/components/section-box';
 import { StyledSectionLimit } from './styles';
 import {
   definitions,

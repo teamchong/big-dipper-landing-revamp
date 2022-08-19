@@ -1,5 +1,7 @@
 import { styled } from '@mui/material/styles';
-import { ListItemButton, Modal, Paper } from '@mui/material';
+import ListItemButton from '@mui/material/ListItemButton';
+import Modal from '@mui/material/Modal';
+import Paper from '@mui/material/Paper';
 
 export const StyledModal = styled(Modal)(({ theme }) => ({
   backdropFilter: 'blur(10px)',

@@ -1,8 +1,9 @@
-import { FC, useRef } from 'react';
+import type { FC } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { Box } from '@mui/material';
-import { NetworkBoxProps } from './types';
+// import Box from '@mui/material/Box';
+import type { NetworkBoxProps } from './types';
 import { StyledBox } from './styles';
 
 const NetworkBox: FC<NetworkBoxProps> = ({ label, logo, link }) => {

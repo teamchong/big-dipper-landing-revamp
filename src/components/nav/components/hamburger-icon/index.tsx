@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { StyledButton } from './styles';
-import { HamburgerIconProps } from './types';
+import type { HamburgerIconProps } from './types';
 
 const HamburgerIcon: FC<HamburgerIconProps> = ({ isIcon, toggleHamburgerMenu, ...props }) => {
   return (

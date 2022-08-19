@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes } from 'react';
 import { StyledDiv } from './styles';
 
 const ContentBox: FC<HTMLAttributes<HTMLElement>> = ({ children, className }) => {

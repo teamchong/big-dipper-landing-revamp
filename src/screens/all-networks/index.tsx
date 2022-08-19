@@ -1,14 +1,17 @@
 import useTranslation from 'next-translate/useTranslation';
-import {
-  FC, useMemo, useEffect, useState,
-} from 'react';
-import { Layout, SectionBox } from '@components';
-import { Box, Typography, Fab } from '@mui/material';
+import type { FC } from 'react';
+import { useMemo, useEffect, useState } from 'react';
+import Layout from '@src/components/layout';
+import SectionBox from '@src/components/section-box';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import { StyledSectionLimit } from './styles';
-import { SearchBox, NetworkBox } from './components';
-import { AllNetworksProps } from './types';
+import NetworkBox from './components/network-box';
+import SearchBox from './components/search-box';
+import type { AllNetworksProps } from './types';
 
 const handleScrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 

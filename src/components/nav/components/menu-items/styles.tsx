@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { ListItemButton } from '@mui/material';
+import ListItemButton from '@mui/material/ListItemButton';
 
 export const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
   textAlign: 'left',

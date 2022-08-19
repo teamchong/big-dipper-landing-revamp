@@ -1,7 +1,9 @@
-import { FC, HTMLAttributes } from 'react';
-import { Button, MenuItem, Typography } from '@mui/material';
+import type { FC, HTMLAttributes } from 'react';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
 import classnames from 'classnames';
-import { MenuType } from '../../types';
+import type { MenuType } from '../../types';
 import { useMenuMobile } from './hooks';
 import { StyledDiv, StyledMenu } from './styles';
 

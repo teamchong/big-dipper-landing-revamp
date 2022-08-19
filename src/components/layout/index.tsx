@@ -1,7 +1,8 @@
-import { FC, HTMLAttributes } from 'react';
-import { Box } from '@mui/material';
-import { Nav, Footer } from '..';
-import { LayoutProps } from './types';
+import type { FC, HTMLAttributes } from 'react';
+import Box from '@mui/material/Box';
+import Nav from '../nav';
+import Footer from '../footer';
+import type { LayoutProps } from './types';
 import { StyledMain, StyledDiv } from './styles';
 
 const Layout: FC<LayoutProps & HTMLAttributes<HTMLElement>> = ({ children }) => {

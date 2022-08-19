@@ -1,6 +1,7 @@
-import { FC, Fragment, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes } from 'react';
+import { Fragment } from 'react';
 import Trans from 'next-translate/Trans';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import { StyledSectionLimit } from './styles';
