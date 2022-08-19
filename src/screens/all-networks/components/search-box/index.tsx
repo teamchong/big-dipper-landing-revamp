@@ -45,7 +45,7 @@ const SearchBox: FC<SearchBoxProps> = ({ networks }) => {
   return (
     <StyledAutocomplete
       popupIcon={null}
-      noOptionsText={t('notMatch')}
+      noOptionsText={t('noMatch')}
       options={options}
       PopperComponent={StyledPopper}
       renderOption={renderOption}

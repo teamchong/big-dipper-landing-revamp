@@ -56,9 +56,10 @@ export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
 }));
 
 export const StyledDBLogo = styled(BDLogo)(({ theme }) => ({
-  height: '36px',
+  height: '28px',
   display: 'block',
   [theme.breakpoints.up('md')]: {
+    height: '36px',
     margin: theme.spacing(1),
   },
 }));

@@ -1,12 +1,12 @@
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import LinearProgress from '@mui/material/LinearProgress';
-import { equals } from 'ramda';
+import equals from 'ramda/src/equals';
 import getNetworkInfo, { NetworkData } from '@src/utils/get-network-info';
 import type { NetworkBoxProps } from './types';
 import { StyledBox } from './styles';
@@ -14,21 +14,17 @@ import { StyledBox } from './styles';
 const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
   const url = getUrlFromNetwork(network);
   const { name, logo } = network;
-  const anchorRef = useRef<HTMLAnchorElement>(null);
 
   const [data, setData] = useState<NetworkData | null | undefined>(undefined);
   useEffect(() => {
     getNetworkInfo(network.name)
       .then((res) => setData((prev) => (equals(prev, res) ? prev : res)))
-      .catch((error) => {
-        console.error(error);
-        setData(null);
-      });
+      .catch(() => setData(null));
   }, []);
   return (
     <StyledBox>
       <Link href={url} passHref>
-        <a href="/" ref={anchorRef}>
+        <a href="/">
           {(data === undefined || !!data) && (
             <Box className="popover">
               <Box>

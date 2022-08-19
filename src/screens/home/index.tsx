@@ -1,8 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import type { FC } from 'react';
 import { useEffect, useMemo, useState } from 'react';
-import Layout from '@src/components/layout';
-import SectionBox from '@src/components/section-box';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -12,7 +10,9 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
 import equals from 'ramda/es/equals';
-import { StyledSectionLimit, StyledImageBox } from './styles';
+import {
+  StyledLayout, StyledSectionLimit, StyledSectionBox, StyledImageBox,
+} from './styles';
 import Slide1 from './components/slide1';
 import SearchBox from './components/search-box';
 import NetworkBox from './components/network-box';
@@ -31,8 +31,8 @@ const Home: FC<HomeProps> = ({ networkList }) => {
   );
   const { t } = useTranslation('common');
   return (
-    <Layout>
-      <SectionBox sx={{ padding: '0', overflow: 'visible' }}>
+    <StyledLayout>
+      <StyledSectionBox>
         <StyledSectionLimit className="logo">
           <Box className="slider">
             <Slider dots slidesToScroll={1} slidesToShow={1}>
@@ -63,11 +63,11 @@ const Home: FC<HomeProps> = ({ networkList }) => {
         </StyledSectionLimit>
         <StyledSectionLimit className="scrollToTop">
           <Fab onClick={handleScrollToTop}>
-            <KeyboardArrowUpIcon />
+            <KeyboardArrowUpIcon height={36} />
           </Fab>
         </StyledSectionLimit>
-      </SectionBox>
-    </Layout>
+      </StyledSectionBox>
+    </StyledLayout>
   );
 };
 

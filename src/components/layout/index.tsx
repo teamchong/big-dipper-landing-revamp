@@ -5,9 +5,9 @@ import Footer from '../footer';
 import type { LayoutProps } from './types';
 import { StyledMain, StyledDiv } from './styles';
 
-const Layout: FC<LayoutProps & HTMLAttributes<HTMLElement>> = ({ children }) => {
+const Layout: FC<LayoutProps & HTMLAttributes<HTMLElement>> = ({ children, ...props }) => {
   return (
-    <StyledMain>
+    <StyledMain {...props}>
       <Box className="footerBox">
         <Nav />
         <StyledDiv>{children}</StyledDiv>

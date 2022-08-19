@@ -5,7 +5,8 @@ import { styled, alpha } from '@mui/material';
 export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('md')]: {
-    width: theme.spacing(30),
+    width: theme.spacing(28),
+    minWidth: theme.spacing(28),
   },
   '& .MuiInputBase-root': {
     borderRadius: theme.spacing(2),

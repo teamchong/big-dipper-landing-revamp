@@ -102,12 +102,12 @@ export const common: ThemeOptions = {
   mixins: {
     gradientBackground: {
       backgroundImage:
-        'radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(/images/background/back.png)',
+        'radial-gradient(100vw 50vh at 30% 60vh, #7077AD, #30177d)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '50% 0',
       [theme.breakpoints.up('md')]: {
         backgroundImage:
-          'radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d), url(/images/background/back.png)',
+          'radial-gradient(420px 420px at 35% 400px, #7077AD, #30177d)',
       },
     },
     headerGlow: {

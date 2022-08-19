@@ -6,12 +6,15 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   minHeight: theme.spacing(12),
   borderRadius: theme.spacing(2),
   background: theme.palette.grey.A400,
-  border: `1px solid ${theme.palette.text.primary}`,
+  border: `2px solid ${theme.palette.text.primary}`,
   display: 'inline-flex',
   justifyContent: 'center',
   flexFlow: 'row wrap',
   alignItems: 'center',
   textAlign: 'center',
+  '&:hover': {
+    background: theme.palette.grey.A200,
+  },
   '& a': {
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.overline.fontSize,

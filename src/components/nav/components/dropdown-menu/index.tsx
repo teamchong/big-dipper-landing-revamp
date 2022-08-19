@@ -6,7 +6,7 @@ import MenuItems from '../menu-items';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ isMenu, toggleHamburgerMenu }) => {
   return (
-    <StyledModal open={isMenu} sx={{ backdropFilter: 'blur(10px)' }}>
+    <StyledModal open={isMenu}>
       <>
         <Wrapper>
           <StyledHamburgerIcon toggleHamburgerMenu={toggleHamburgerMenu} isIcon={false} />
