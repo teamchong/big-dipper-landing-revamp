@@ -1,13 +1,15 @@
+import useTranslation from 'next-translate/useTranslation';
 import React from 'react';
 import { StyledBox, StyledTypography1, StyledTypography2 } from './styles';
 
-const Slide1 = () => (
-  <StyledBox>
-    <StyledTypography1 variant="h2">Real-time Interchain Explorer</StyledTypography1>
-    <StyledTypography2 variant="h4">
-      View real-time status of different networks
-    </StyledTypography2>
-  </StyledBox>
-);
+const Slide1 = () => {
+  const { t } = useTranslation('common');
+  return (
+    <StyledBox>
+      <StyledTypography1 variant="h2">{t('slider1Header')}</StyledTypography1>
+      <StyledTypography2 variant="h4">{t('slider1Description')}</StyledTypography2>
+    </StyledBox>
+  );
+};
 
 export default Slide1;

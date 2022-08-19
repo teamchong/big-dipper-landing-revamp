@@ -11,18 +11,13 @@ import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import { StyledSectionLimit, StyledImageBox } from './styles';
-import {
-  Slide1, Slide2, SearchBox, NetworkBox,
-} from './components';
+import Slide1 from './components/slide1';
+import SearchBox from './components/search-box';
+import NetworkBox from './components/network-box';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import type { HomeProps } from './types';
 
-const settings = {
-  dots: true,
-  slidesToScroll: 1,
-  slidesToShow: 1,
-};
 
 const handleScrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -48,9 +43,9 @@ const Home: FC<HomeProps> = ({ networkList }) => {
       <SectionBox sx={{ padding: '0', overflow: 'visible' }}>
         <StyledSectionLimit className="logo">
           <Box className="slider">
-            <Slider {...settings}>
+            <Slider dots slidesToScroll={1} slidesToShow={1}>
               <Slide1 />
-              <Slide2 />
+              <Slide1 />
             </Slider>
           </Box>
           <StyledImageBox>
