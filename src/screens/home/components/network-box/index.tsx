@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import LinearProgress from '@mui/material/LinearProgress';
-import equals from 'ramda/src/equals';
+import { equals } from 'ramda';
 import getNetworkInfo, { NetworkData } from '@src/utils/get-network-info';
 import type { NetworkBoxProps } from './types';
 import { StyledBox } from './styles';

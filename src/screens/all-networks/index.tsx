@@ -12,7 +12,7 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
-import equals from 'ramda/es/equals';
+import { equals } from 'ramda';
 import classnames from 'classnames';
 import type { AllNetworksProps } from './types';
 import SearchBox from './components/search-box';
@@ -135,12 +135,16 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
             />
           ))}
           {!filteredNetworks.length && (
-          <Box sx={{
-            background: '#fff', padding: '2rem', borderRadius: '1rem', color: '#000',
-          }}
-          >
-            {t('common:noMatch')}
-          </Box>
+            <Box
+              sx={{
+                background: '#fff',
+                padding: '2rem',
+                borderRadius: '1rem',
+                color: '#000',
+              }}
+            >
+              {t('common:noMatch')}
+            </Box>
           )}
         </StyledSectionLimit>
         <StyledSectionLimit className="scrollToTop">

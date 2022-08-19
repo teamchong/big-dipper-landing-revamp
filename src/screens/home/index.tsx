@@ -9,7 +9,7 @@ import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
-import equals from 'ramda/es/equals';
+import { equals } from 'ramda';
 import {
   StyledLayout, StyledSectionLimit, StyledSectionBox, StyledImageBox,
 } from './styles';

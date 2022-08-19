@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import mergeDeepLeft from 'ramda/src/mergeDeepLeft';
+import { mergeDeepLeft } from 'ramda';
 
 export const useNav = () => {
   const [state, setState] = useState<{
