@@ -2,11 +2,7 @@ import type { FC, HTMLAttributes } from 'react';
 import Link from 'next/link';
 import { HOME } from '@utils/links';
 import {
-  StyledSectionLimit,
-  Wrapper,
-  StyledDBLogo,
-  StyledHamburgerIcon,
-  StyledMenuBar,
+  StyledSectionLimit, Wrapper, StyledDBLogo, StyledHamburgerIcon, StyledMenuBar,
 } from './styles';
 import DropdownMenu from './components/dropdown-menu';
 import { useNav } from './hooks';
@@ -18,13 +14,13 @@ const Nav: FC<HTMLAttributes<HTMLElement>> = () => {
   return (
     <StyledSectionLimit>
       <Wrapper>
-        <Link
-          href={HOME}
-          passHref
-        >
-          <a href="/">
-            <StyledDBLogo className="logo" height={36} />
-          </a>
+        <Link href={HOME} passHref>
+          {
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <a>
+              <StyledDBLogo className="logo" height={36} />
+            </a>
+          }
         </Link>
         <StyledHamburgerIcon
           toggleHamburgerMenu={toggleHamburgerMenu}

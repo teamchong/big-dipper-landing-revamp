@@ -25,41 +25,44 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
   return (
     <StyledBox>
       <Link href={url} passHref>
-        <a href="/">
-          {(data === undefined || !!data) && (
-            <Box className="popover">
-              <Box>
-                <Image alt={name} src={logo} width="30" height="30" unoptimized />
-                <Typography>{name}</Typography>
-              </Box>
-              {data === undefined && <LinearProgress />}
-              {!!data && (
+        {
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <a>
+            {(data === undefined || !!data) && (
+              <Box className="popover">
                 <Box>
-                  {!!data.token_price?.[0] && (
-                    <Box>
-                      <Box>{data.token_price[0].unit_name?.toUpperCase()}</Box>
-                      <Box>{data.token_price[0].price}</Box>
-                    </Box>
-                  )}
-                  {!!data.block?.[0]?.height && (
-                    <Box>
-                      <Box>Blocks</Box>
-                      <Box>{data.block[0].height}</Box>
-                    </Box>
-                  )}
-                  {!!data.genesis?.[0].chain_id && (
-                    <Box>
-                      <Box>Chain ID</Box>
-                      <Box>{data.genesis?.[0].chain_id}</Box>
-                    </Box>
-                  )}
+                  <Image alt={name} src={logo} width="30" height="30" unoptimized />
+                  <Typography>{name}</Typography>
                 </Box>
-              )}
-            </Box>
-          )}
-          <Image alt={name} src={logo} width="30" height="30" unoptimized />
-          {name}
-        </a>
+                {data === undefined && <LinearProgress />}
+                {!!data && (
+                  <Box>
+                    {!!data.token_price?.[0] && (
+                      <Box>
+                        <Box>{data.token_price[0].unit_name?.toUpperCase()}</Box>
+                        <Box>{data.token_price[0].price}</Box>
+                      </Box>
+                    )}
+                    {!!data.block?.[0]?.height && (
+                      <Box>
+                        <Box>Blocks</Box>
+                        <Box>{data.block[0].height}</Box>
+                      </Box>
+                    )}
+                    {!!data.genesis?.[0].chain_id && (
+                      <Box>
+                        <Box>Chain ID</Box>
+                        <Box>{data.genesis?.[0].chain_id}</Box>
+                      </Box>
+                    )}
+                  </Box>
+                )}
+              </Box>
+            )}
+            <Image alt={name} src={logo} width="30" height="30" unoptimized />
+            {name}
+          </a>
+        }
       </Link>
     </StyledBox>
   );

@@ -16,13 +16,7 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = ({ className }) => {
         <div className="icons__wrapper">
           {socialLinks.map((x) => {
             return (
-              <a
-                key={x.className}
-                href={x.url}
-                target="_blank"
-                rel="noreferrer"
-                className={`social ${x.className}`}
-              >
+              <a key={x.className} href={x.url} target="_blank" rel="noreferrer" className={`social ${x.className}`}>
                 {x.component}
               </a>
             );
@@ -62,7 +56,10 @@ const Footer: FC<HTMLAttributes<HTMLElement>> = ({ className }) => {
           <Typography variant="caption">
             <Trans
               i18nKey="common:productOf"
-              components={[<a href="https://www.forbole.com" target="_blank" rel="noreferrer" />]}
+              components={
+                // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
+                [<a href="https://www.forbole.com" target="_blank" rel="noreferrer" />]
+              }
             />
           </Typography>
         </div>
