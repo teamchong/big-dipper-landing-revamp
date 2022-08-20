@@ -1,3 +1,4 @@
+/* A GraphQL query. */
 const queryIBC = `
 query MyQuery {
   genesis {
@@ -11,6 +12,7 @@ query MyQuery {
     unit_name
   }
 }`;
+/* A map of queries to run for each network. */
 const queries: { [key: string]: string } = {
   Solana: `
 query MyQuery {
@@ -23,29 +25,25 @@ query MyQuery {
   }
 }`,
 };
-/*
-{
-  "data": {
-    "genesis": [
-      {
-        "chain_id": "agoric-3"
-      }
-    ],
-    "block": [
-      {
-        "height": 6218898
-      }
-    ],
-    "token_price": []
-  }
-}
-*/
+/**
+ * `NetworkData` is an object with three properties: `genesis`, `block`, and `token_price`.
+ * @property genesis - The chain_id of the network.
+ * @property block - The current block height of the network.
+ * @property token_price - The price of the token in USD.
+ */
 export type NetworkData = {
   genesis: Array<{ chain_id: string }>;
   block: Array<{ height: 6218898 }>;
   token_price: Array<{ price: number; unit_name: string }>;
 };
 
+/**
+ * It takes a network name,
+ * looks up the GraphQL URL for that network in the `NEXT_PUBLIC_GRAPHQL_URL`
+ * environment variable, and then queries the GraphQL endpoint for the network's information
+ * @param {string} networkName - The name of the network you want to get the info for.
+ * @returns NetworkData
+ */
 export default async function getNetworkInfo(networkName: string) {
   if (!process.env.NEXT_PUBLIC_GRAPHQL_URL) {
     throw new Error('NEXT_PUBLIC_GRAPHQL_URL is not defined');
