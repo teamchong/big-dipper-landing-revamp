@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { SectionLimit } from '@components';
-import Content from './components/content';
+import SectionLimit from '@src/components/section-limit';
 import MenuDesktop from './components/menu-desktop';
 import MenuMobile from './components/menu-mobile';
+import Content from './components/content';
 
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   '& .title': {

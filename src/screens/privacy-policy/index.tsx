@@ -2,7 +2,9 @@
 import { Fragment } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import Typography from '@mui/material/Typography';
-import { ContentBox, Layout, SectionBox } from '@components';
+import ContentBox from '@src/components/content-box';
+import Layout from '@src/components/layout';
+import SectionBox from '@src/components/section-box';
 import { StyledSectionLimit } from './styles';
 import {
   definitions, trackingDefinitions, cookies, dataUse, dataUseTwo, legalRequirements, analytics,

@@ -64,12 +64,13 @@ exports[`Nav matches snapshot 1`] = `
 }
 
 .emotion-2 {
-  height: 36px;
+  height: 28px;
   display: block;
 }
 
 @media (min-width:768px) {
   .emotion-2 {
+    height: 36px;
     margin: 8px;
   }
 }

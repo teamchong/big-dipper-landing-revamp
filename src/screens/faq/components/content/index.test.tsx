@@ -3,9 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MockTheme } from '@mocks';
 import Component from '.';
 
-jest.mock('@components', () => ({
-  ContentBox: (props: object) => <div data-testid="ContentBox" {...props} />,
-}));
+jest.mock('@src/components/content-box', () => (props: object) => <div data-testid="ContentBox" {...props} />);
 // ==================================
 // unit tests
 // ==================================

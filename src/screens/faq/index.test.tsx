@@ -8,17 +8,20 @@ const mockI18n = {
   lang: 'en',
 };
 jest.mock('next-translate/useTranslation', () => () => mockI18n);
-jest.mock('@components', () => ({
-  Layout: (props: object) => <div data-testid="Layout" {...props} />,
-  SectionBox: (props: object) => <div data-testid="SectionBox" {...props} />,
-  SectionLimit: (props: object) => <div data-testid="SectionLimit" {...props} />,
-}));
+jest.mock('@src/components/layout', () => (props: object) => <div data-testid="Layout" {...props} />);
+jest.mock('@src/components/section-box', () => ({ main, ...props }: { [p: string]: unknown }) => (
+  <div data-testid="SectionBox" {...props} />
+));
+jest.mock('@src/components/section-limit', () => (props: object) => <div data-testid="SectionLimit" {...props} />);
+jest.mock('@src/components/content-box', () => (props: object) => <div data-testid="ContentBox" {...props} />);
 
-jest.mock('./components', () => ({
-  MenuDesktop: (props: object) => <div data-testid="MenuDesktop" {...props} />,
-  MenuMobile: (props: object) => <div data-testid="MenuMobile" {...props} />,
-  Content: (props: object) => <div data-testid="Content" {...props} />,
-}));
+jest.mock('./components/menu-desktop', () => (props: object) => <div data-testid="MenuDesktop" {...props} />);
+jest.mock('./components/menu-mobile', () => ({ handleChange, ...props }: { [p: string]: unknown }) => (
+  <div data-testid="MenuMobile" {...props} />
+));
+jest.mock('./components/content', () => ({ handleChange, ...props }: { [p: string]: unknown }) => (
+  <div data-testid="Content" {...props} />
+));
 // ==================================
 // unit tests
 // ==================================

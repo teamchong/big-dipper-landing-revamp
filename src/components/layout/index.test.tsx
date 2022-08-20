@@ -1,14 +1,10 @@
-import React, { ClassAttributes, HTMLAttributes } from 'react';
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Component from '.';
 
 jest.mock('..', () => ({
-  Nav: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & HTMLAttributes<HTMLElement>) => (
-    <div data-testid="Nav" {...props} />
-  ),
-  Footer: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & HTMLAttributes<HTMLElement>) => (
-    <div data-testid="Footer" {...props} />
-  ),
+  Nav: (props: object) => <div data-testid="Nav" {...props} />,
+  Footer: (props: object) => <div data-testid="Footer" {...props} />,
 }));
 // ==================================
 // unit tests

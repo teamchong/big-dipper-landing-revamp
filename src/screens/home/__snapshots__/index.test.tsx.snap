@@ -11,6 +11,40 @@ exports[`Dummy Test matches snapshot 1`] = `
   }
 }
 
+@keyframes animation-1 {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes animation-2 {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -20,6 +54,10 @@ exports[`Dummy Test matches snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
+  background-image: radial-gradient(100vw 50vh at 30% 60vh, #7077AD, #30177d);
+  background-repeat: no-repeat;
+  -webkit-background-position: 50% 0;
+  background-position: 50% 0;
   background-image: radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d),url(/images/background/back.png);
   background-repeat: no-repeat;
   -webkit-background-position: 50% 0;
@@ -28,7 +66,7 @@ exports[`Dummy Test matches snapshot 1`] = `
 
 @media (min-width:768px) {
   .emotion-0 {
-    background-image: radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d),url(/images/background/back.png);
+    background-image: radial-gradient(420px 420px at 35% 400px, #7077AD, #30177d);
   }
 }
 
@@ -45,6 +83,12 @@ exports[`Dummy Test matches snapshot 1`] = `
   .emotion-0 .footerBox {
     -webkit-background-size: 1024px auto;
     background-size: 1024px auto;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    background-image: radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d),url(/images/background/back.png);
   }
 }
 
@@ -111,12 +155,13 @@ exports[`Dummy Test matches snapshot 1`] = `
 }
 
 .emotion-4 {
-  height: 36px;
+  height: 28px;
   display: block;
 }
 
 @media (min-width:768px) {
   .emotion-4 {
+    height: 36px;
     margin: 8px;
   }
 }
@@ -464,7 +509,6 @@ exports[`Dummy Test matches snapshot 1`] = `
 .emotion-33.logo {
   width: 100%;
   text-align: center;
-  max-width: 100%;
   position: relative;
   background: url("/images/background/stars.png");
   background-repeat: no-repeat;
@@ -529,12 +573,12 @@ exports[`Dummy Test matches snapshot 1`] = `
 }
 
 .emotion-33.content {
-  padding: 0 32px;
+  padding: 0 24px;
 }
 
 @media (min-width:768px) {
   .emotion-33.content {
-    padding: 0 80px;
+    padding: 0;
   }
 }
 
@@ -554,6 +598,7 @@ exports[`Dummy Test matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 0 0 16px 0;
 }
 
 .emotion-33.content .searchBar .MuiTypography-root {
@@ -573,7 +618,7 @@ exports[`Dummy Test matches snapshot 1`] = `
 }
 
 .emotion-33.networks {
-  padding: 32px;
+  padding: 24px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
   -webkit-box-pack: justify;
@@ -584,7 +629,7 @@ exports[`Dummy Test matches snapshot 1`] = `
 
 @media (min-width:768px) {
   .emotion-33.networks {
-    padding: 0 80px;
+    padding: 0;
     grid-gap: 24px;
   }
 }
@@ -790,7 +835,8 @@ exports[`Dummy Test matches snapshot 1`] = `
 
 @media (min-width:768px) {
   .emotion-54 {
-    width: 240px;
+    width: 224px;
+    min-width: 224px;
   }
 }
 
@@ -1114,7 +1160,216 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
   transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
 }
 
-.emotion-67 {
+.emotion-66 {
+  min-width: 96px;
+  min-height: 96px;
+  border-radius: 16px;
+  background: #bdbdbd;
+  border: 2px solid #EFEFEF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.emotion-66:hover {
+  background: #eeeeee;
+}
+
+.emotion-66 a {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.emotion-66 a .popover {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background-color: #334198;
+  color: #EFEFEF;
+  border-radius: 16px;
+  padding: 16px;
+  pointer-events: none;
+  -webkit-box-flex-flow: column nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(1) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  gap: 8px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(1) img {
+  background: #fff;
+  border-radius: 100%;
+  border: 4px solid #fff!important;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(2) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: column nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(2)>.MuiBox-root {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: 8px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(2)>.MuiBox-root>.MuiBox-root {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(2)>.MuiBox-root>.MuiBox-root:nth-of-type(1) {
+  font-weight: 700;
+  text-align: left;
+}
+
+.emotion-66 a .popover>.MuiBox-root:nth-of-type(2)>.MuiBox-root>.MuiBox-root:nth-of-type(2) {
+  text-align: right;
+}
+
+.emotion-66 a:hover {
+  opacity: 0.95;
+}
+
+.emotion-66 a:hover .popover {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-69 {
+  margin: 0;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  font-family: SFPro,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.emotion-70 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 4px;
+  z-index: 0;
+  background-color: rgb(72, 101, 124);
+}
+
+@media print {
+  .emotion-70 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.emotion-71 {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transform-origin: left;
+  background-color: #90caf9;
+  width: auto;
+  -webkit-animation: animation-1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: animation-1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.emotion-72 {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transform-origin: left;
+  background-color: #90caf9;
+  width: auto;
+  -webkit-animation: animation-2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
+  animation: animation-2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
+}
+
+.emotion-74 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1166,60 +1421,60 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
   background-color: #e0e0e0;
 }
 
-.emotion-67::-moz-focus-inner {
+.emotion-74::-moz-focus-inner {
   border-style: none;
 }
 
-.emotion-67.Mui-disabled {
+.emotion-74.Mui-disabled {
   pointer-events: none;
   cursor: default;
 }
 
 @media print {
-  .emotion-67 {
+  .emotion-74 {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
 }
 
-.emotion-67:active {
+.emotion-74:active {
   box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
 }
 
-.emotion-67:hover {
+.emotion-74:hover {
   background-color: #f5f5f5;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 @media (hover: none) {
-  .emotion-67:hover {
+  .emotion-74:hover {
     background-color: #e0e0e0;
   }
 }
 
-.emotion-67.Mui-focusVisible {
+.emotion-74.Mui-focusVisible {
   box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
 }
 
-.emotion-67.Mui-disabled {
+.emotion-74.Mui-disabled {
   color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-.emotion-70 {
+.emotion-77 {
   margin-left: auto;
   margin-right: auto;
   max-width: 1024px;
   padding: 40px 32px;
 }
 
-.emotion-70 .icons__wrapper path {
+.emotion-77 .icons__wrapper path {
   fill: #fff;
 }
 
-.emotion-70 .icons__wrapper {
+.emotion-77 .icons__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1235,7 +1490,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
   margin-bottom: 40px;
 }
 
-.emotion-70 .terms__wrapper {
+.emotion-77 .terms__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1253,38 +1508,38 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
   align-items: center;
 }
 
-.emotion-70 .MuiTypography-caption {
+.emotion-77 .MuiTypography-caption {
   font-weight: 500;
   color: #fff;
 }
 
-.emotion-70 .terms__links {
+.emotion-77 .terms__links {
   margin: 8px 0px;
 }
 
-.emotion-70 .terms--dash {
+.emotion-77 .terms--dash {
   margin: 0px 8px;
 }
 
-.emotion-70 .terms--dash.desktop {
+.emotion-77 .terms--dash.desktop {
   display: none;
 }
 
 @media (min-width:768px) {
-  .emotion-70 .icons__wrapper {
+  .emotion-77 .icons__wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
   }
 
-  .emotion-70 .social {
+  .emotion-77 .social {
     margin: 0px 12px;
   }
 }
 
 @media (min-width:1280px) {
-  .emotion-70 {
+  .emotion-77 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1298,16 +1553,16 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
     justify-content: space-between;
   }
 
-  .emotion-70 .icons__wrapper {
+  .emotion-77 .icons__wrapper {
     padding-left: 0;
     margin-bottom: 0;
   }
 
-  .emotion-70 .social:first-of-type {
+  .emotion-77 .social:first-of-type {
     margin-left: 0;
   }
 
-  .emotion-70 .terms__wrapper {
+  .emotion-77 .terms__wrapper {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -1317,12 +1572,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
     align-items: center;
   }
 
-  .emotion-70 .terms--dash.desktop {
+  .emotion-77 .terms--dash.desktop {
     display: inline;
   }
 }
 
-.emotion-71 {
+.emotion-78 {
   margin: 0;
   font-size: 0.75rem;
   font-family: SFPro,Arial,sans-serif;
@@ -1492,7 +1747,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
         class="emotion-31"
       >
         <section
-          class=" emotion-32"
+          class="emotion-32"
         >
           <div
             class="logo emotion-33"
@@ -1533,12 +1788,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                           <h2
                             class="MuiTypography-root MuiTypography-h2 emotion-36"
                           >
-                            Real-time Interchain Explorer
+                            slider1Header
                           </h2>
                           <h4
                             class="MuiTypography-root MuiTypography-h4 emotion-37"
                           >
-                            View real-time status of different networks
+                            slider1Description
                           </h4>
                         </div>
                       </div>
@@ -1557,12 +1812,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                           <h2
                             class="MuiTypography-root MuiTypography-h2 emotion-36"
                           >
-                            Real-time Interchain Explorer
+                            slider1Header
                           </h2>
                           <h4
                             class="MuiTypography-root MuiTypography-h4 emotion-37"
                           >
-                            View real-time status of different networks
+                            slider1Description
                           </h4>
                         </div>
                       </div>
@@ -1581,12 +1836,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                           <h2
                             class="MuiTypography-root MuiTypography-h2 emotion-36"
                           >
-                            Real-time Interchain Explorer
+                            slider1Header
                           </h2>
                           <h4
                             class="MuiTypography-root MuiTypography-h4 emotion-37"
                           >
-                            View real-time status of different networks
+                            slider1Description
                           </h4>
                         </div>
                       </div>
@@ -1605,12 +1860,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                           <h2
                             class="MuiTypography-root MuiTypography-h2 emotion-36"
                           >
-                            Real-time Interchain Explorer
+                            slider1Header
                           </h2>
                           <h4
                             class="MuiTypography-root MuiTypography-h4 emotion-37"
                           >
-                            View real-time status of different networks
+                            slider1Description
                           </h4>
                         </div>
                       </div>
@@ -1629,12 +1884,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                           <h2
                             class="MuiTypography-root MuiTypography-h2 emotion-36"
                           >
-                            Real-time Interchain Explorer
+                            slider1Header
                           </h2>
                           <h4
                             class="MuiTypography-root MuiTypography-h4 emotion-37"
                           >
-                            View real-time status of different networks
+                            slider1Description
                           </h4>
                         </div>
                       </div>
@@ -1787,12 +2042,90 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
           </div>
           <div
             class="networks emotion-33"
-          />
+          >
+            <div
+              class="MuiBox-root emotion-66"
+            >
+              <a
+                href="https://cosmos.bigdipper.live"
+              >
+                <div
+                  class="popover MuiBox-root emotion-1"
+                >
+                  <div
+                    class="MuiBox-root emotion-1"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="Cosmos Hub"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 emotion-69"
+                    >
+                      Cosmos Hub
+                    </p>
+                  </div>
+                  <span
+                    class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate emotion-70"
+                    role="progressbar"
+                  >
+                    <span
+                      class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate emotion-71"
+                    />
+                    <span
+                      class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate emotion-72"
+                    />
+                  </span>
+                </div>
+                <span
+                  style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"
+                      style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                    />
+                  </span>
+                  <img
+                    alt="Cosmos Hub"
+                    data-nimg="intrinsic"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                  />
+                  <noscript />
+                </span>
+                Cosmos Hub
+              </a>
+            </div>
+          </div>
           <div
             class="scrollToTop emotion-33"
           >
             <button
-              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-default emotion-67"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-default emotion-74"
               tabindex="0"
               type="button"
             >
@@ -1801,6 +2134,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-20"
                 data-testid="KeyboardArrowUpIcon"
                 focusable="false"
+                height="36"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1816,7 +2150,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
       </div>
       <footer>
         <div
-          class="emotion-70"
+          class="emotion-77"
         >
           <div
             class="icons__wrapper"
@@ -1907,12 +2241,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
             class="terms__wrapper"
           >
             <span
-              class="MuiTypography-root MuiTypography-caption emotion-71"
+              class="MuiTypography-root MuiTypography-caption emotion-78"
             >
               copyright
             </span>
             <span
-              class="MuiTypography-root MuiTypography-caption terms--dash desktop emotion-71"
+              class="MuiTypography-root MuiTypography-caption terms--dash desktop emotion-78"
             >
               |
             </span>
@@ -1920,19 +2254,19 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
               class="terms__links"
             >
               <a
-                class="MuiTypography-root MuiTypography-caption link__item link__item--caption emotion-71"
+                class="MuiTypography-root MuiTypography-caption link__item link__item--caption emotion-78"
                 href="/terms-and-conditions"
                 target="_self"
               >
                 termsAndConditions
               </a>
               <span
-                class="MuiTypography-root MuiTypography-caption terms--dash emotion-71"
+                class="MuiTypography-root MuiTypography-caption terms--dash emotion-78"
               >
                 |
               </span>
               <a
-                class="MuiTypography-root MuiTypography-caption link__item link__item--caption emotion-71"
+                class="MuiTypography-root MuiTypography-caption link__item link__item--caption emotion-78"
                 href="/privacy-policy"
                 target="_self"
               >
@@ -1940,12 +2274,12 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-59:focus::-ms-input-
               </a>
             </div>
             <span
-              class="MuiTypography-root MuiTypography-caption terms--dash desktop emotion-71"
+              class="MuiTypography-root MuiTypography-caption terms--dash desktop emotion-78"
             >
               |
             </span>
             <span
-              class="MuiTypography-root MuiTypography-caption emotion-71"
+              class="MuiTypography-root MuiTypography-caption emotion-78"
             >
               common:productOf
             </span>
