@@ -1,21 +1,17 @@
 import type { FC } from 'react';
 import { useCallback } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import getChainIdFromNetwork from '@src/utils/get-chain-id-from-network';
 import MenuList from '@mui/material/MenuList';
 import Badge from '@mui/material/Badge';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import classnames from 'classnames';
-import type { NetworkBoxProps, NetworkMenuLinkProps } from './types';
+import type { NetworkBoxProps } from './types';
 import { StyledBox } from './styles';
+import NetworkMenuLink from '../network-menu-link';
 
 /* A React component that renders a network box. */
 const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {

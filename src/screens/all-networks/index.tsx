@@ -14,14 +14,31 @@ import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
 import { equals } from 'ramda';
 import classnames from 'classnames';
+import AllNetworksTab from '@src/utils/all-networks-tab';
 import type { AllNetworksProps } from './types';
 import SearchBox from './components/search-box';
 import NetworkBox from './components/network-box';
 import { StyledSectionLimit, StyledSectionBox } from './styles';
 
+function getTabIndexFromPath(path: string) {
+  switch (path) {
+    case '/all-networks#tab=Mainnet':
+      return AllNetworksTab.Mainnet;
+    case '/all-networks#tab=Testnet':
+      return AllNetworksTab.Testnet;
+    case '/all-networks#tab=Devnet':
+      return AllNetworksTab.Devnet;
+    case '/all-networks#tab=Retired':
+      return AllNetworksTab.Retired;
+    default:
+      return AllNetworksTab.All;
+  }
+}
+
 const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
   const router = useRouter();
   const [networks, setNetworks] = useState(networkList ?? []);
+  const [tabIndex, setTabIndex] = useState(0);
   const [opened, setOpened] = useState('');
   const handleOpen = useCallback(
     (name: string) => {
@@ -29,27 +46,34 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
     },
     [setOpened],
   );
+  const handleHashChange = useCallback((url: string) => {
+    const newTabIndex = getTabIndexFromPath(url);
+    setTabIndex((prev) => (prev === newTabIndex ? prev : newTabIndex));
+  }, []);
   useEffect(() => {
     loadNetworkList().then((res) => setNetworks((prev) => (equals(prev, res) ? prev : res)));
+    handleHashChange(router.asPath);
+    router.events.on('hashChangeStart', handleHashChange);
+    return () => router.events.off('hashChangeStart', handleHashChange);
   }, []);
   const sortedNetworks = useMemo(
     () => networks.sort((a, b) => a.name.localeCompare(b.name)),
     [networks],
   );
   const filteredNetworks = useMemo(() => {
-    switch (router.asPath) {
-      case '/all-networks#tab=Mainnet':
+    switch (tabIndex) {
+      case AllNetworksTab.Mainnet:
         return sortedNetworks.filter((n) => n.links?.some((l) => /^mainnet$/i.test(l.name)));
-      case '/all-networks#tab=Testnet':
+      case AllNetworksTab.Testnet:
         return sortedNetworks.filter((n) => n.links?.some((l) => /^testnet$/i.test(l.name)));
-      case '/all-networks#tab=Devnet':
+      case AllNetworksTab.Devnet:
         return sortedNetworks.filter((n) => n.links?.some((l) => /^devnet$/i.test(l.name)));
-      case '/all-networks#tab=Retired':
+      case AllNetworksTab.Retired:
         return sortedNetworks.filter((n) => n.links?.some((l) => /^retired$/i.test(l.name)));
       default:
         return sortedNetworks;
     }
-  }, [sortedNetworks, router.asPath]);
+  }, [sortedNetworks, tabIndex]);
   const { t } = useTranslation('all-networks');
   return (
     <Layout>
@@ -69,12 +93,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                   <a
                     href="/"
                     className={classnames({
-                      active: ![
-                        '/all-networks#tab=Mainnet',
-                        '/all-networks#tab=Testnet',
-                        '/all-networks#tab=Devnet',
-                        '/all-networks#tab=Retired',
-                      ].some((l) => router.asPath === l),
+                      active: tabIndex === AllNetworksTab.All,
                     })}
                   >
                     All
@@ -84,7 +103,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                   <a
                     href="/"
                     className={classnames({
-                      active: router.asPath.match('/all-networks#tab=Mainnet'),
+                      active: tabIndex === AllNetworksTab.Mainnet,
                     })}
                   >
                     Mainnet
@@ -94,7 +113,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                   <a
                     href="/"
                     className={classnames({
-                      active: router.asPath.match('/all-networks#tab=Testnet'),
+                      active: tabIndex === AllNetworksTab.Testnet,
                     })}
                   >
                     Testnet
@@ -104,7 +123,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                   <a
                     href="/"
                     className={classnames({
-                      active: router.asPath.match('/all-networks#tab=Devnet'),
+                      active: tabIndex === AllNetworksTab.Devnet,
                     })}
                   >
                     Devnet
@@ -114,7 +133,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                   <a
                     href="/"
                     className={classnames({
-                      active: router.asPath.match('/all-networks#tab=Retired'),
+                      active: tabIndex === AllNetworksTab.Retired,
                     })}
                   >
                     Retired
