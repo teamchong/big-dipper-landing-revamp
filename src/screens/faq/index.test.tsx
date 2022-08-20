@@ -9,15 +9,15 @@ const mockI18n = {
 };
 jest.mock('next-translate/useTranslation', () => () => mockI18n);
 jest.mock('@components', () => ({
-  Layout: (props: any) => <div data-testid="Layout" {...props} />,
-  SectionBox: (props: any) => <div data-testid="SectionBox" {...props} />,
-  SectionLimit: (props: any) => <div data-testid="SectionLimit" {...props} />,
+  Layout: (props: object) => <div data-testid="Layout" {...props} />,
+  SectionBox: (props: object) => <div data-testid="SectionBox" {...props} />,
+  SectionLimit: (props: object) => <div data-testid="SectionLimit" {...props} />,
 }));
 
 jest.mock('./components', () => ({
-  MenuDesktop: (props: any) => <div data-testid="MenuDesktop" {...props} />,
-  MenuMobile: (props: any) => <div data-testid="MenuMobile" {...props} />,
-  Content: (props: any) => <div data-testid="Content" {...props} />,
+  MenuDesktop: (props: object) => <div data-testid="MenuDesktop" {...props} />,
+  MenuMobile: (props: object) => <div data-testid="MenuMobile" {...props} />,
+  Content: (props: object) => <div data-testid="Content" {...props} />,
 }));
 // ==================================
 // unit tests

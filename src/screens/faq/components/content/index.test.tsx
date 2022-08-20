@@ -4,7 +4,7 @@ import { MockTheme } from '@mocks';
 import Component from '.';
 
 jest.mock('@components', () => ({
-  ContentBox: (props: any) => <div data-testid="ContentBox" {...props} />,
+  ContentBox: (props: object) => <div data-testid="ContentBox" {...props} />,
 }));
 // ==================================
 // unit tests
