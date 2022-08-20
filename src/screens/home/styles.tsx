@@ -27,7 +27,6 @@ export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   '&.logo': {
     width: '100%',
     textAlign: 'center',
-    maxWidth: '100%',
     position: 'relative',
     background: 'url("/images/background/stars.png")',
     backgroundRepeat: 'no-repeat',
