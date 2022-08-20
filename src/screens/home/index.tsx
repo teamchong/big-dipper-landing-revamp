@@ -27,7 +27,9 @@ const Home: FC<HomeProps> = ({ networkList }) => {
     loadNetworkList().then((res) => setNetworks((prev) => (equals(prev, res) ? prev : res)));
   }, []);
   const sortedNetworks = useMemo(
-    () => networks.sort((a, b) => a.name.localeCompare(b.name)),
+    () => networks
+      .filter((network) => network?.links?.some((l) => /^mainnet$/i.test(l.name)))
+      .sort((a, b) => a.name.localeCompare(b.name)),
     [networks],
   );
   const { t } = useTranslation('common');
