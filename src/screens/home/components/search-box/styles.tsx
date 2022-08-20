@@ -32,6 +32,7 @@ export const StyledPopper = styled(Popper)(({ theme }) => ({
     alignItems: 'center',
     cursor: 'pointer',
     padding: `0 ${theme.spacing(2)}`,
+    marginTop: theme.spacing(1),
     '&:hover': {
       backgroundColor: alpha(theme.palette.background.mobileMenu, 0.8),
     },
