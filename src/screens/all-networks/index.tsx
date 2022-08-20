@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 import Trans from 'next-translate/Trans';
@@ -56,10 +57,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
     router.events.on('hashChangeStart', handleHashChange);
     return () => router.events.off('hashChangeStart', handleHashChange);
   }, []);
-  const sortedNetworks = useMemo(
-    () => networks.sort((a, b) => a.name.localeCompare(b.name)),
-    [networks],
-  );
+  const sortedNetworks = useMemo(() => networks.sort((a, b) => a.name.localeCompare(b.name)), [networks]);
   const filteredNetworks = useMemo(() => {
     switch (tabIndex) {
       case AllNetworksTab.Mainnet:
@@ -91,7 +89,6 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
               <Box className="tabs">
                 <Link href="/all-networks" passHref>
                   <a
-                    href="/"
                     className={classnames({
                       active: tabIndex === AllNetworksTab.All,
                     })}
@@ -101,7 +98,6 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                 </Link>
                 <Link href="/all-networks#tab=Mainnet" passHref>
                   <a
-                    href="/"
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Mainnet,
                     })}
@@ -111,7 +107,6 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                 </Link>
                 <Link href="/all-networks#tab=Testnet" passHref>
                   <a
-                    href="/"
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Testnet,
                     })}
@@ -121,7 +116,6 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                 </Link>
                 <Link href="/all-networks#tab=Devnet" passHref>
                   <a
-                    href="/"
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Devnet,
                     })}
@@ -131,7 +125,6 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
                 </Link>
                 <Link href="/all-networks#tab=Retired" passHref>
                   <a
-                    href="/"
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Retired,
                     })}
@@ -146,12 +139,7 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
         </StyledSectionLimit>
         <StyledSectionLimit className="networks">
           {filteredNetworks.map((network) => (
-            <NetworkBox
-              key={network.name}
-              network={network}
-              isOpened={network.name === opened}
-              onOpen={handleOpen}
-            />
+            <NetworkBox key={network.name} network={network} isOpened={network.name === opened} onOpen={handleOpen} />
           ))}
           {!filteredNetworks.length && (
             <Box
