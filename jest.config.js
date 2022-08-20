@@ -20,4 +20,7 @@ const customJestConfig = {
   snapshotSerializers: ['@emotion/jest/serializer'],
 };
 
+// eslint-disable-next-line max-len
+process.env.NEXT_PUBLIC_NETWORK_LIST_API = 'https://raw.githubusercontent.com/forbole/big-dipper-networks/main/networks.json';
+
 module.exports = createJestConfig(customJestConfig);

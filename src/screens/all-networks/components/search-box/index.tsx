@@ -2,10 +2,13 @@ import useTranslation from 'next-translate/useTranslation';
 import type { FC, HTMLAttributes, ComponentProps } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import MenuItem from '@mui/material/MenuItem';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
+import { Typography } from '@mui/material';
 import type { SearchBoxProps } from './types';
 import { StyledAutocomplete, StyledPopper } from './styles';
 
@@ -32,13 +35,15 @@ function addSearch(InputProps: ComponentProps<typeof TextField>['InputProps']) {
  * @returns A React component
  */
 function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
-  const { network } = option as { network: Network };
-  const url = getUrlFromNetwork(network);
+  const { network, link } = option as { network: Network, link: NetworkLink };
   return (
-    <MenuItem {...props} title={url}>
-      <Image alt={network.name} src={network.logo} width="16" height="16" unoptimized />
-      {network.name}
-    </MenuItem>
+    <ListItem {...props} title={link.url}>
+      <ListItemIcon><Image alt={link.name} src={network.logo} width="36" height="36" unoptimized /></ListItemIcon>
+      <ListItemText>
+        {network.name}
+        <Typography variant="subtitle1">{link.chain_id}</Typography>
+      </ListItemText>
+    </ListItem>
   );
 }
 
@@ -62,7 +67,11 @@ function handleChange(_event: unknown, value: unknown) {
 /* A React component that uses the Material UI Autocomplete component. */
 const SearchBox: FC<SearchBoxProps> = ({ networks }) => {
   const { t } = useTranslation('common');
-  const options = networks.map((network) => ({ label: network.name, network }));
+  const options = networks.flatMap((network) => network.links.map((link) => ({
+    label: `${network.name} ${link.chain_id}`,
+    network,
+    link,
+  })));
   return (
     <StyledAutocomplete
       popupIcon={null}
@@ -71,11 +80,7 @@ const SearchBox: FC<SearchBoxProps> = ({ networks }) => {
       PopperComponent={StyledPopper}
       renderOption={renderOption}
       renderInput={({ InputProps, ...params }) => (
-        <TextField
-          {...params}
-          placeholder={t('searchNetwork')}
-          InputProps={addSearch(InputProps)}
-        />
+        <TextField {...params} placeholder={t('searchNetwork')} InputProps={addSearch(InputProps)} />
       )}
       onChange={handleChange}
     />

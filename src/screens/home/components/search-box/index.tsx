@@ -2,7 +2,9 @@ import useTranslation from 'next-translate/useTranslation';
 import type { FC, HTMLAttributes, ComponentProps } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import MenuItem from '@mui/material/MenuItem';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
@@ -33,10 +35,10 @@ function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
   const { network } = option as { network: Network };
   const url = getUrlFromNetwork(network);
   return (
-    <MenuItem {...props} title={url}>
-      <Image alt={network.name} src={network.logo} width="16" height="16" unoptimized />
-      {network.name}
-    </MenuItem>
+    <ListItem {...props} title={url}>
+      <ListItemIcon><Image alt={network.name} src={network.logo} width="36" height="36" unoptimized /></ListItemIcon>
+      <ListItemText>{network.name}</ListItemText>
+    </ListItem>
   );
 }
 
