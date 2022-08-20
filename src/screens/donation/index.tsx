@@ -10,6 +10,7 @@ import { StyledSectionLimit } from './styles';
 import { addresses } from './utils';
 import { useDonation } from './hooks';
 
+/* A React component that renders the Donation page. */
 const Donation = () => {
   const { t } = useTranslation('donation');
   const { handleCopyToClipboard } = useDonation();

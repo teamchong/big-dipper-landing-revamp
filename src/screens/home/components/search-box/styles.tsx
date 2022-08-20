@@ -2,6 +2,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Popper from '@mui/material/Popper';
 import { styled, alpha } from '@mui/material';
 
+/* A styled component. */
 export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('md')]: {
@@ -16,6 +17,7 @@ export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
   },
 }));
 
+/* A styled component. */
 export const StyledPopper = styled(Popper)(({ theme }) => ({
   '& .MuiPaper-root': {
     backgroundColor: alpha(theme.palette.background.mobileMenu, 0.9),

@@ -9,6 +9,7 @@ import {
 import { useFAQ } from './hooks';
 import { getMenuItems, getContent } from './utils';
 
+/* A React component that renders the FAQ page. */
 const FAQ = () => {
   const { t } = useTranslation('faq');
   const { state, handleSelected } = useFAQ();

@@ -7,6 +7,7 @@ import ContentBox from '@src/components/content-box';
 import { StyledSectionLimit } from './styles';
 import { definitions } from './utils';
 
+/* A React component that renders the terms and conditions page. */
 const TermsAndConditions = () => {
   const { t } = useTranslation('terms-and-conditions');
   return (

@@ -6,6 +6,7 @@ import SectionBox from '@src/components/section-box';
 import ContentBox from '@src/components/content-box';
 import { StyledSectionLimit } from './styles';
 
+/* A React component that renders the About page. */
 const About = () => {
   const { t } = useTranslation('about');
   return (

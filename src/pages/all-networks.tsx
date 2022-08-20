@@ -15,6 +15,11 @@ export async function getStaticProps() {
   };
 }
 
+/**
+ * `AllNetworks` is a function that takes a `networkList` as a prop and returns a `AllNetworksPage`
+ * component with the `networkList` prop
+ * @param  - NextPage<ComponentProps<typeof AllNetworksPage>>
+ */
 const AllNetworks: NextPage<ComponentProps<typeof AllNetworksPage>> = ({ networkList }) => (
   <AllNetworksPage networkList={networkList} />
 );

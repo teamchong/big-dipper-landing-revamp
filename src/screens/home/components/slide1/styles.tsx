@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
+/* Creating a Box component with the styles applied. */
 export const StyledBox = styled(Box)({
   position: 'absolute',
   bottom: 0,
@@ -9,6 +10,7 @@ export const StyledBox = styled(Box)({
   right: 0,
 });
 
+/* Creating a Typography component with the styles applied. */
 export const StyledTypography1 = styled(Typography)(({ theme }) => ({
   width: '100%',
   textAlign: 'center',
@@ -19,6 +21,7 @@ export const StyledTypography1 = styled(Typography)(({ theme }) => ({
   },
 }));
 
+/* Creating a Typography component with the styles applied. */
 export const StyledTypography2 = styled(Typography)(({ theme }) => ({
   width: '100%',
   textAlign: 'center',

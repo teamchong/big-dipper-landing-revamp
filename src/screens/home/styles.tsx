@@ -4,6 +4,7 @@ import SectionLimit from '@src/components/section-limit';
 import SectionBox from '@src/components/section-box';
 import Layout from '@src/components/layout';
 
+/* A styled component. */
 export const StyledLayout = styled(Layout)(({ theme }) => ({
   backgroundImage:
     'radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(/images/background/back.png)',
@@ -15,11 +16,13 @@ export const StyledLayout = styled(Layout)(({ theme }) => ({
   },
 }));
 
+/* Creating a styled component. */
 export const StyledSectionBox = styled(SectionBox)({
   padding: '0',
   overflow: 'visible',
 });
 
+/* Creating a styled component. */
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   '&.logo': {
     width: '100%',
@@ -122,6 +125,7 @@ const breathing = keyframes`
 }
 `;
 
+/* Creating a styled component. */
 export const StyledImageBox = styled(Box)(({ theme }) => ({
   transform: 'scale(1)',
   mixBlendMode: 'screen',

@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import SectionLimit from '@src/components/section-limit';
 
+/* A styled component. */
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   wordBreak: 'break-word',
   '& .title': {

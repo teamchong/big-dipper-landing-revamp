@@ -20,6 +20,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import type { HomeProps } from './types';
 
+/* A React component that renders the Homepage. */
 const Home: FC<HomeProps> = ({ networkList }) => {
   const [networks, setNetworks] = useState(networkList ?? []);
   useEffect(() => {

@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import SectionLimit from '../../components/section-limit';
 
+/* A styled component. */
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({
   '& .title': {
     marginBottom: theme.spacing(2),

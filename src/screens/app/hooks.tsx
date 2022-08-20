@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 
+/**
+ * This function is called when the app is loaded, and it removes the server-side injected CSS.
+ */
 export const useApp = () => {
   // ==========================
   // css

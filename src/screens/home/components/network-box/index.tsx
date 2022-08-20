@@ -11,6 +11,7 @@ import getNetworkInfo, { NetworkData } from '@src/utils/get-network-info';
 import type { NetworkBoxProps } from './types';
 import { StyledBox } from './styles';
 
+/* A React component that renders a network box. */
 const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
   const url = getUrlFromNetwork(network);
   const { name, logo } = network;
@@ -63,4 +64,5 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
     </StyledBox>
   );
 };
+
 export default NetworkBox;

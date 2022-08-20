@@ -17,23 +17,7 @@ import classnames from 'classnames';
 import type { NetworkBoxProps, NetworkMenuLinkProps } from './types';
 import { StyledBox } from './styles';
 
-const NetworkMenuLink: FC<NetworkMenuLinkProps> = ({ link }) => {
-  const { name, chain_id: chainId, url } = link;
-  return (
-    <Link href={url} passHref>
-      <ListItemButton>
-        <ListItemText>
-          <Typography variant="h5">{name}</Typography>
-          <Typography variant="subtitle1">{chainId}</Typography>
-        </ListItemText>
-        <ListItemIcon>
-          <KeyboardArrowRightIcon height={16} />
-        </ListItemIcon>
-      </ListItemButton>
-    </Link>
-  );
-};
-
+/* A React component that renders a network box. */
 const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {
   const handleClick = useCallback(() => onOpen(network.name), [network, onOpen]);
   const chainId = getChainIdFromNetwork(network);
@@ -69,4 +53,5 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {
     </StyledBox>
   );
 };
+
 export default NetworkBox;

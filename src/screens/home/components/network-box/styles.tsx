@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
+/* A styled component. */
 export const StyledBox = styled(Box)(({ theme }) => ({
   minWidth: theme.spacing(12),
   minHeight: theme.spacing(12),

@@ -5,6 +5,12 @@ import Footer from '../footer';
 import type { LayoutProps } from './types';
 import { StyledMain, StyledDiv } from './styles';
 
+/**
+ * The `Layout` React component.
+ * @param  - FC<LayoutProps & HTMLAttributes<HTMLElement>>
+ * @returns A styled main element with a box element inside of it. The box element has a nav, styled
+ * div, and footer element inside of it.
+ */
 const Layout: FC<LayoutProps & HTMLAttributes<HTMLElement>> = ({ children, ...props }) => {
   return (
     <StyledMain {...props}>
