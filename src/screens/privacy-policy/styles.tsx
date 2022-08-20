@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import SectionLimit from '@src/components/section-limit';
+import { SectionLimit } from '@components';
 
 /* A styled component. */
 export const StyledSectionLimit = styled(SectionLimit)(({ theme }) => ({

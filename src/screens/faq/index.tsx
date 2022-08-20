@@ -1,8 +1,7 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import Typography from '@mui/material/Typography';
-import Layout from '@src/components/layout';
-import SectionBox from '@src/components/section-box';
+import { Layout, SectionBox } from '@components';
 import {
   StyledContent, StyledMenuDesktop, StyledMenuMobile, StyledSectionLimit,
 } from './styles';

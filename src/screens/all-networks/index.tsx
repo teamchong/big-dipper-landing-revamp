@@ -5,7 +5,7 @@ import Trans from 'next-translate/Trans';
 import {
   FC, useCallback, useEffect, useMemo, useState,
 } from 'react';
-import Layout from '@src/components/layout';
+import { Layout } from '@components';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

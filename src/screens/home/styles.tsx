@@ -1,8 +1,6 @@
 import { keyframes, styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import SectionLimit from '@src/components/section-limit';
-import SectionBox from '@src/components/section-box';
-import Layout from '@src/components/layout';
+import { Layout, SectionBox, SectionLimit } from '@components';
 
 /* A styled component. */
 export const StyledLayout = styled(Layout)(({ theme }) => ({
