@@ -1,9 +1,9 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import Typography from '@mui/material/Typography';
-import SectionBox from '@components/section-box';
-import Layout from '@components/layout';
-import ContentBox from '@components/content-box';
+import SectionBox from '@src/components/section-box';
+import Layout from '@src/components/layout';
+import ContentBox from '@src/components/content-box';
 import { StyledSectionLimit } from './styles';
 import { definitions } from './utils';
 

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import ContentBox from '@components/content-box';
+import ContentBox from '@src/components/content-box';
 
 export const StyledContentBox = styled(ContentBox)(({ theme }) => ({
   '& .faq__wrapper:not(:last-child)': {

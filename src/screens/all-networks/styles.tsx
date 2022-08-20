@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import SectionLimit from '@components/section-limit';
-import SectionBox from '@components/section-box';
+import SectionLimit from '@src/components/section-limit';
+import SectionBox from '@src/components/section-box';
 
 export const StyledSectionBox = styled(SectionBox)({
   padding: '0',
