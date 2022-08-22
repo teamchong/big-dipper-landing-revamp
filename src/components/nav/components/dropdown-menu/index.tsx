@@ -1,16 +1,17 @@
 import type { FC } from 'react';
-import { StyledDesktopMenuBox, StyledHamburgerIcon } from '../../styles';
 import { StyledMobileMenuPaper, StyledModal } from './styles';
+import MenubarDesktop from '../menubar-desktop';
 import type { DropdownMenuProps } from './types';
 import MenuItems from '../menu-items';
+import HamburgerIcon from '../hamburger-icon';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ isMenu, toggleHamburgerMenu }) => {
   return (
     <StyledModal open={isMenu}>
       <>
-        <StyledDesktopMenuBox>
-          <StyledHamburgerIcon toggleHamburgerMenu={toggleHamburgerMenu} isIcon={false} />
-        </StyledDesktopMenuBox>
+        <MenubarDesktop>
+          <HamburgerIcon toggleHamburgerMenu={toggleHamburgerMenu} isIcon={false} />
+        </MenubarDesktop>
         <StyledMobileMenuPaper>
           <MenuItems />
         </StyledMobileMenuPaper>

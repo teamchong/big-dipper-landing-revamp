@@ -2,7 +2,6 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import BDLogo from '@assets/big-dipper-red.svg';
 import SectionLimit from '../section-limit';
-import HamburgerIcon from './components/hamburger-icon';
 
 export const StyledMenuBar = styled(Box)(({ theme }) => ({
   display: 'none',
@@ -46,24 +45,5 @@ export const StyledDBLogo = styled(BDLogo)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     height: '36px',
     margin: theme.spacing(1),
-  },
-}));
-
-export const StyledDesktopMenuBox = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexFlow: 'row nowrap',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '79px',
-  padding: theme.spacing(2),
-  [theme.breakpoints.up('md')]: {
-    justifyContent: 'space-between',
-  },
-}));
-
-export const StyledHamburgerIcon = styled(HamburgerIcon)(({ theme }) => ({
-  zIndex: 2,
-  [theme.breakpoints.up('md')]: {
-    display: 'none',
   },
 }));

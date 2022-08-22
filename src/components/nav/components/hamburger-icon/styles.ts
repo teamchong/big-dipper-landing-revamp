@@ -11,6 +11,10 @@ export const StyledButton = styled('button')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  zIndex: 2,
+  [theme.breakpoints.up('md')]: {
+    display: 'none',
+  },
   '& .bar1, .bar2, .bar3': {
     width: '24px',
     border: '1px solid #FFFFFF',
