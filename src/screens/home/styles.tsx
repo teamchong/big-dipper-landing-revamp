@@ -4,6 +4,7 @@ import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import Layout from '@src/components/layout';
 import SectionBox from '@src/components/section-box';
+import { flexbox } from '@mui/system';
 
 /* A styled component. */
 export const StyledLayout = styled(Layout)(({ theme }) => ({
@@ -134,4 +135,8 @@ export const StyledImageBox = styled(Box)(({ theme }) => ({
   mixBlendMode: 'screen',
   padding: `0 ${theme.spacing(5)}`,
   animation: `${breathing} 3s infinite ease`,
+  '& img': {
+    maxWidth: '100%',
+    height: 'auto',
+  },
 }));

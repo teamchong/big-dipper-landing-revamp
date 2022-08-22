@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
-import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
@@ -53,10 +52,9 @@ const Home: FC<HomeProps> = ({ networkList }) => {
               </Slider>
             </Box>
             <StyledImageBox>
-              <Image
+              <img
                 src="/images/big-dipper-transparent.png"
                 alt="Big Dipper"
-                layout="intrinsic"
                 width="482"
                 height="452"
               />

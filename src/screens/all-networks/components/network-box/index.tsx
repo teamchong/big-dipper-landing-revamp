@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useCallback } from 'react';
-import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import getChainIdFromNetwork from '@src/utils/get-chain-id-from-network';
@@ -30,7 +29,7 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {
         </StyledPopoverBox>
       )}
       <StyledDropdownBottomBox onClick={handleClick}>
-        <Image alt={name} src={logo} width="30" height="30" unoptimized />
+        <img alt={name} src={logo} width="30" height="30" />
         <Box>
           <Typography>{name}</Typography>
           <Box>

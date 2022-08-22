@@ -3,7 +3,6 @@ import type { FC, HTMLAttributes, ComponentProps } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
-import Image from 'next/image';
 import type { SearchBoxProps } from './types';
 import {
   StyledAutocomplete,
@@ -41,7 +40,7 @@ function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
   return (
     <StyledListItem {...props} title={link.url}>
       <StyledListItemIcon>
-        <Image alt={link.name} src={network.logo} width="36" height="36" unoptimized />
+        <img alt={link.name} src={network.logo} width="36" height="36" />
       </StyledListItemIcon>
       <StyledListItemText>
         {network.name}

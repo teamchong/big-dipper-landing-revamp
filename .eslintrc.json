@@ -66,6 +66,7 @@
   "rules": {
       "react/require-default-props": "warn",
       "max-len": ["warn", { "code": 120 }],
+      "@next/next/no-img-element": "off",
       "import/no-extraneous-dependencies": "off",
       "global-require": "warn",
       "import/no-dynamic-require": "warn",

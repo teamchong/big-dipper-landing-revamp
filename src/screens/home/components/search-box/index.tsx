@@ -3,7 +3,6 @@ import type { FC, HTMLAttributes, ComponentProps } from 'react';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
-import Image from 'next/image';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import type { SearchBoxProps } from './types';
 import {
@@ -42,7 +41,7 @@ function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
   return (
     <StyledListItem {...props} title={url}>
       <StyledListItemIcon>
-        <Image alt={network.name} src={network.logo} width="36" height="36" unoptimized />
+        <img alt={network.name} src={network.logo} width="36" height="36" />
       </StyledListItemIcon>
       <StyledListItemText>{network.name}</StyledListItemText>
     </StyledListItem>

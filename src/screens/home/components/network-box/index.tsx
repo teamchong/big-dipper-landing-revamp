@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -31,7 +30,7 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
             {(data === undefined || !!data) && (
               <StyledPopoverBox>
                 <Box>
-                  <Image alt={name} src={logo} width="30" height="30" unoptimized />
+                  <img alt={name} src={logo} width="30" height="30" />
                   <Typography>{name}</Typography>
                 </Box>
                 {data === undefined && <LinearProgress />}
@@ -59,7 +58,7 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
                 )}
               </StyledPopoverBox>
             )}
-            <Image alt={name} src={logo} width="30" height="30" unoptimized />
+            <img alt={name} src={logo} width="30" height="30" />
             {name}
           </StyledAnchor>
         }

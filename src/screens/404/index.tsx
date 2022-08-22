@@ -2,7 +2,6 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 import { StyledLayout } from './styles';
 
 const FourOhFour = () => {
@@ -10,7 +9,7 @@ const FourOhFour = () => {
 
   return (
     <StyledLayout>
-      <Image alt={t('404')} src="/images/404-unicorn.svg" width={380} height={380} />
+      <img alt={t('404')} src="/images/404-unicorn.svg" width={380} height={380} />
       <Typography variant="h3">
         {t('404')}
       </Typography>
