@@ -13,7 +13,7 @@ exports[`Layout matches snapshot 1`] = `
 }
 
 .emotion-1 {
-  background: url(/images/background/footer.svg);
+  background: url(../../../public/images/background/footer.svg);
   background-repeat: no-repeat;
   -webkit-background-position: 50% 100%;
   background-position: 50% 100%;

@@ -1,6 +1,7 @@
 const nextTranslate = require('next-translate');
 
 module.exports = {
+  basePath: process.env.BASE_PATH,
   ...nextTranslate({
     poweredByHeader: false,
     nextConfig: {

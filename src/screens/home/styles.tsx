@@ -1,20 +1,20 @@
+/* eslint-disable max-len */
 import { keyframes, styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import Layout from '@src/components/layout';
 import SectionBox from '@src/components/section-box';
-import { flexbox } from '@mui/system';
 
 /* A styled component. */
 export const StyledLayout = styled(Layout)(({ theme }) => ({
   backgroundImage:
-    'radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(/images/background/back.png)',
+    'radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(../../../../public/images/background/back.png)',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '50% 0',
   [theme.breakpoints.up('md')]: {
     backgroundImage:
-      'radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d), url(/images/background/back.png)',
+      'radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d), url(../../../../images/background/back.png)',
   },
 }));
 
