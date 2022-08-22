@@ -1,11 +1,9 @@
 import type { FC, HTMLAttributes } from 'react';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import classnames from 'classnames';
 import type { MenuType } from '../../types';
 import { useMenuMobile } from './hooks';
-import { StyledDiv, StyledMenu } from './styles';
+import { StyledMenu, StyledButton, StyledMenuItem } from './styles';
 
 const MenuMobile: FC<MenuType & HTMLAttributes<HTMLElement>> = ({
   className,
@@ -15,14 +13,14 @@ const MenuMobile: FC<MenuType & HTMLAttributes<HTMLElement>> = ({
 }) => {
   const { anchorEl, handleClick, handleClose } = useMenuMobile();
   return (
-    <StyledDiv className={className}>
-      <Button
+    <div className={className}>
+      <StyledButton
         className="selected"
         onClick={handleClick}
         // endIcon={<KeyboardArrowDownIcon />}
       >
         {items[selected]}
-      </Button>
+      </StyledButton>
       <StyledMenu
         elevation={0}
         anchorOrigin={{
@@ -40,7 +38,7 @@ const MenuMobile: FC<MenuType & HTMLAttributes<HTMLElement>> = ({
       >
         {items.map((x, i) => {
           return (
-            <MenuItem
+            <StyledMenuItem
               onClick={() => {
                 handleChange?.(i);
                 handleClose();
@@ -52,11 +50,11 @@ const MenuMobile: FC<MenuType & HTMLAttributes<HTMLElement>> = ({
               })}
             >
               <Typography variant="h5">{x}</Typography>
-            </MenuItem>
+            </StyledMenuItem>
           );
         })}
       </StyledMenu>
-    </StyledDiv>
+    </div>
   );
 };
 

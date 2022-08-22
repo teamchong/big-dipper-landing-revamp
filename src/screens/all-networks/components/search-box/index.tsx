@@ -2,15 +2,18 @@ import useTranslation from 'next-translate/useTranslation';
 import type { FC, HTMLAttributes, ComponentProps } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
-import { Typography } from '@mui/material';
 import type { SearchBoxProps } from './types';
-import { StyledAutocomplete, StyledPopper } from './styles';
+import {
+  StyledAutocomplete,
+  StyledPopper,
+  StyledSubtitle1,
+  StyledListItem,
+  StyledListItemIcon,
+  StyledListItemText,
+} from './styles';
 
 /**
  * It takes an object with a property called `startAdornment` and returns an object with a property
@@ -35,15 +38,17 @@ function addSearch(InputProps: ComponentProps<typeof TextField>['InputProps']) {
  * @returns A React component
  */
 function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
-  const { network, link } = option as { network: Network, link: NetworkLink };
+  const { network, link } = option as { network: Network; link: NetworkLink };
   return (
-    <ListItem {...props} title={link.url}>
-      <ListItemIcon><Image alt={link.name} src={network.logo} width="36" height="36" unoptimized /></ListItemIcon>
-      <ListItemText>
+    <StyledListItem {...props} title={link.url}>
+      <StyledListItemIcon>
+        <Image alt={link.name} src={network.logo} width="36" height="36" unoptimized />
+      </StyledListItemIcon>
+      <StyledListItemText>
         {network.name}
-        <Typography variant="subtitle1">{link.chain_id}</Typography>
-      </ListItemText>
-    </ListItem>
+        <StyledSubtitle1>{link.chain_id}</StyledSubtitle1>
+      </StyledListItemText>
+    </StyledListItem>
   );
 }
 

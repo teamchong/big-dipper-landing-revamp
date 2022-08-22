@@ -1,19 +1,24 @@
 import useTranslation from 'next-translate/useTranslation';
 import type { FC, HTMLAttributes, ComponentProps } from 'react';
-import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
 import Image from 'next/image';
 import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import type { SearchBoxProps } from './types';
-import { StyledAutocomplete, StyledPopper } from './styles';
+import {
+  StyledAutocomplete,
+  StyledPopper,
+  StyledListItem,
+  StyledListItemIcon,
+  StyledListItemText,
+} from './styles';
 
 /**
- * It takes an InputProps object and returns a new InputProps object with a startAdornment property
- * @param InputProps - The props that are passed to the TextField component.
+ * It takes an object with a property called `startAdornment` and returns an object with a property
+ * called `startAdornment`
+ * @param InputProps - The InputProps prop is a prop that is passed to the TextField component. It's an
+ * object that contains a startAdornment property.
  * @returns An object with the properties of InputProps and startAdornment.
  */
 function addSearch(InputProps: ComponentProps<typeof TextField>['InputProps']) {
@@ -35,10 +40,12 @@ function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
   const { network } = option as { network: Network };
   const url = getUrlFromNetwork(network);
   return (
-    <ListItem {...props} title={url}>
-      <ListItemIcon><Image alt={network.name} src={network.logo} width="36" height="36" unoptimized /></ListItemIcon>
-      <ListItemText>{network.name}</ListItemText>
-    </ListItem>
+    <StyledListItem {...props} title={url}>
+      <StyledListItemIcon>
+        <Image alt={network.name} src={network.logo} width="36" height="36" unoptimized />
+      </StyledListItemIcon>
+      <StyledListItemText>{network.name}</StyledListItemText>
+    </StyledListItem>
   );
 }
 
@@ -71,11 +78,7 @@ const SearchBox: FC<SearchBoxProps> = ({ networks }) => {
       PopperComponent={StyledPopper}
       renderOption={renderOption}
       renderInput={({ InputProps, ...params }) => (
-        <TextField
-          {...params}
-          placeholder={t('searchNetwork')}
-          InputProps={addSearch(InputProps)}
-        />
+        <TextField {...params} placeholder={t('searchNetwork')} InputProps={addSearch(InputProps)} />
       )}
       onChange={handleChange}
     />

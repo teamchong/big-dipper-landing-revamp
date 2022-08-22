@@ -19,28 +19,13 @@ export const StyledMenuBar = styled(Box)(({ theme }) => ({
   },
   '& .MuiButtonBase-root': {
     padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
+    borderRadius: theme.spacing(3),
   },
   '& .submenu, & .active': {
     background: 'transparent none !important',
   },
   '& .active.submenu': {
     background: `${theme.palette.background.activeMenuItem} !important`,
-  },
-  '& .submenu-box': {
-    display: 'inline-flex',
-    position: 'relative',
-  },
-  '& .submenu-container': {
-    position: 'absolute',
-    top: '100%',
-    width: '100%',
-    marginTop: theme.spacing(2),
-    background: theme.palette.background.desktopMenu,
-    borderRadius: theme.spacing(2),
-    zIndex: 10,
-  },
-  '& .submenu-container .MuiButtonBase-root': {
-    padding: `${theme.spacing(2)} ${theme.spacing(3)}`,
   },
 }));
 
@@ -64,7 +49,7 @@ export const StyledDBLogo = styled(BDLogo)(({ theme }) => ({
   },
 }));
 
-export const Wrapper = styled(Box)(({ theme }) => ({
+export const StyledDesktopMenuBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexFlow: 'row nowrap',
   justifyContent: 'center',
@@ -73,20 +58,6 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   [theme.breakpoints.up('md')]: {
     justifyContent: 'space-between',
-  },
-  '& .menubar .MuiButtonBase-root': {
-    borderRadius: theme.spacing(3),
-  },
-  '& .menubar .submenu-container .MuiButtonBase-root': {
-    borderRadius: 0,
-  },
-  '& .menubar .submenu-container .MuiButtonBase-root:first-of-type': {
-    borderTopLeftRadius: theme.spacing(2),
-    borderTopRightRadius: theme.spacing(2),
-  },
-  '& .menubar .submenu-container .MuiButtonBase-root:last-of-type': {
-    borderBottomLeftRadius: theme.spacing(2),
-    borderBottomRightRadius: theme.spacing(2),
   },
 }));
 

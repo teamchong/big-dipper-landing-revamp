@@ -4,7 +4,10 @@ import Typography from '@mui/material/Typography';
 import Layout from '@src/components/layout';
 import SectionBox from '@src/components/section-box';
 import {
-  StyledContent, StyledMenuDesktop, StyledMenuMobile, StyledSectionLimit,
+  StyledContent,
+  StyledMenuDesktop,
+  StyledMenuMobile,
+  StyledSectionLimit,
 } from './styles';
 import { useFAQ } from './hooks';
 import { getMenuItems, getContent } from './utils';

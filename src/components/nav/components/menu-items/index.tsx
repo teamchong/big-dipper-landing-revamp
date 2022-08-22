@@ -3,13 +3,12 @@ import { useState, useCallback } from 'react';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Box from '@mui/material/Box';
 import MenuList from '@mui/material/MenuList';
 import ListItemText from '@mui/material/ListItemText';
 import useTranslation from 'next-translate/useTranslation';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { StyledListItemButton } from './styles';
+import { StyledListItemButton, StyledSubmenuContainerBox, StyledSubmenuBox } from './styles';
 import type { MenuItemProps, MenuItemLinkProps } from './types';
 import { getMenuItems } from './utils';
 
@@ -50,7 +49,7 @@ const MenuItem: FC<MenuItemProps> = ({ menuKey, url, submenus }) => {
   if (submenus) {
     const Arrow = activeSubmenuKey === menuKey ? KeyboardArrowUpIcon : KeyboardArrowDownIcon;
     return (
-      <Box className="submenu-box">
+      <StyledSubmenuBox>
         <StyledListItemButton
           onClick={handleToggleSubmenu}
           className={classnames('submenu', {
@@ -60,12 +59,12 @@ const MenuItem: FC<MenuItemProps> = ({ menuKey, url, submenus }) => {
           <ListItemText primary={t(menuKey)} />
           <Arrow />
         </StyledListItemButton>
-        <Box className="submenu-container">
+        <StyledSubmenuContainerBox>
           {menuKey === activeSubmenuKey && submenus.map((submenu) => (
             <MenuItemLink key={submenu.key} menuKey={submenu.key} url={submenu.url} isSubmenu />
           ))}
-        </Box>
-      </Box>
+        </StyledSubmenuContainerBox>
+      </StyledSubmenuBox>
     );
   }
   return null;

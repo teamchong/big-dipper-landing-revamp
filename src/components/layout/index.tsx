@@ -1,8 +1,7 @@
 import type { FC, HTMLAttributes } from 'react';
-import Box from '@mui/material/Box';
 import { Nav, Footer } from '..';
 import type { LayoutProps } from './types';
-import { StyledMain, StyledDiv } from './styles';
+import { StyledMain, StyledContainer, StyledContent } from './styles';
 
 /**
  * The `Layout` React component.
@@ -13,11 +12,11 @@ import { StyledMain, StyledDiv } from './styles';
 const Layout: FC<LayoutProps & HTMLAttributes<HTMLElement>> = ({ children, ...props }) => {
   return (
     <StyledMain {...props}>
-      <Box className="footerBox">
+      <StyledContainer>
         <Nav />
-        <StyledDiv>{children}</StyledDiv>
+        <StyledContent>{children}</StyledContent>
         <Footer />
-      </Box>
+      </StyledContainer>
     </StyledMain>
   );
 };

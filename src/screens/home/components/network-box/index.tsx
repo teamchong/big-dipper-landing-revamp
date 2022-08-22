@@ -9,7 +9,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { equals } from 'ramda';
 import getNetworkInfo, { NetworkData } from '@src/utils/get-network-info';
 import type { NetworkBoxProps } from './types';
-import { StyledBox } from './styles';
+import { StyledAnchor, StyledBox, StyledPopoverBox } from './styles';
 
 /* A React component that renders a network box. */
 const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
@@ -27,9 +27,9 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
       <Link href={url} passHref>
         {
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a>
+          <StyledAnchor>
             {(data === undefined || !!data) && (
-              <Box className="popover">
+              <StyledPopoverBox>
                 <Box>
                   <Image alt={name} src={logo} width="30" height="30" unoptimized />
                   <Typography>{name}</Typography>
@@ -57,11 +57,11 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network }) => {
                     )}
                   </Box>
                 )}
-              </Box>
+              </StyledPopoverBox>
             )}
             <Image alt={name} src={logo} width="30" height="30" unoptimized />
             {name}
-          </a>
+          </StyledAnchor>
         }
       </Link>
     </StyledBox>

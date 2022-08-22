@@ -10,7 +10,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import classnames from 'classnames';
 import type { NetworkBoxProps } from './types';
-import { StyledBox } from './styles';
+import { StyledBox, StyledDropdownBottomBox, StyledPopoverBox } from './styles';
 import NetworkMenuLink from '../network-menu-link';
 
 /* A React component that renders a network box. */
@@ -21,15 +21,15 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {
   return (
     <StyledBox className={classnames({ active: isOpened })}>
       {isOpened && (
-        <Box className="popover">
+        <StyledPopoverBox>
           <MenuList>
             {links.map((link) => (
               <NetworkMenuLink key={link.chain_id} link={link} />
             ))}
           </MenuList>
-        </Box>
+        </StyledPopoverBox>
       )}
-      <Box className="dropdown-bottom" onClick={handleClick}>
+      <StyledDropdownBottomBox onClick={handleClick}>
         <Image alt={name} src={logo} width="30" height="30" unoptimized />
         <Box>
           <Typography>{name}</Typography>
@@ -41,11 +41,11 @@ const NetworkBox: FC<NetworkBoxProps> = ({ network, isOpened, onOpen }) => {
         </Box>
         {!!links?.[0] && (
           <>
-            {isOpened && <KeyboardArrowUpIcon height={16} />}
-            {!isOpened && <KeyboardArrowDownIcon height={16} />}
+            {isOpened && <KeyboardArrowUpIcon width={16} height={16} />}
+            {!isOpened && <KeyboardArrowDownIcon width={16} height={16} />}
           </>
         )}
-      </Box>
+      </StyledDropdownBottomBox>
     </StyledBox>
   );
 };

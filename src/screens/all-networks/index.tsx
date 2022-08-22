@@ -9,17 +9,26 @@ import Layout from '@src/components/layout';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
 import { equals } from 'ramda';
 import classnames from 'classnames';
 import AllNetworksTab from '@src/utils/all-networks-tab';
-import type { AllNetworksProps } from './types';
+import SectionLimit from '@src/components/section-limit';
 import SearchBox from './components/search-box';
+import type { AllNetworksProps } from './types';
 import NetworkBox from './components/network-box';
-import { StyledSectionLimit, StyledSectionBox } from './styles';
+import {
+  StyledFab,
+  StyledSectionBox,
+  StyledSearchBarBox,
+  StyledNetworksBox,
+  StyledScrollTopBox,
+  StyledTabsBox,
+  StyledTab,
+  StyledSubtitle1,
+} from './styles';
 
 function getTabIndexFromPath(path: string) {
   switch (path) {
@@ -76,89 +85,89 @@ const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
   return (
     <Layout>
       <StyledSectionBox>
-        <StyledSectionLimit className="content">
-          <Box className="searchBar">
+        <SectionLimit>
+          <StyledSearchBarBox>
             <Typography variant="h3">{t('allNetworks')}</Typography>
             <Box>
-              <Typography variant="subtitle1">
+              <StyledSubtitle1>
                 <Trans
                   i18nKey="all-networks:allNetworksDescription"
                   components={[<Link href="https://www.forbole.com/contact" />]}
                 />
-              </Typography>
-              <Box className="tabs">
+              </StyledSubtitle1>
+              <StyledTabsBox>
                 <Link href="/all-networks" passHref>
-                  <a
+                  <StyledTab
                     className={classnames({
                       active: tabIndex === AllNetworksTab.All,
                     })}
                   >
                     All
-                  </a>
+                  </StyledTab>
                 </Link>
                 <Link href="/all-networks#tab=Mainnet" passHref>
-                  <a
+                  <StyledTab
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Mainnet,
                     })}
                   >
                     Mainnet
-                  </a>
+                  </StyledTab>
                 </Link>
                 <Link href="/all-networks#tab=Testnet" passHref>
-                  <a
+                  <StyledTab
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Testnet,
                     })}
                   >
                     Testnet
-                  </a>
+                  </StyledTab>
                 </Link>
                 <Link href="/all-networks#tab=Devnet" passHref>
-                  <a
+                  <StyledTab
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Devnet,
                     })}
                   >
                     Devnet
-                  </a>
+                  </StyledTab>
                 </Link>
                 <Link href="/all-networks#tab=Retired" passHref>
-                  <a
+                  <StyledTab
                     className={classnames({
                       active: tabIndex === AllNetworksTab.Retired,
                     })}
                   >
                     Retired
-                  </a>
+                  </StyledTab>
                 </Link>
-              </Box>
+              </StyledTabsBox>
             </Box>
             <SearchBox networks={filteredNetworks} />
-          </Box>
-        </StyledSectionLimit>
-        <StyledSectionLimit className="networks">
-          {filteredNetworks.map((network) => (
-            <NetworkBox key={network.name} network={network} isOpened={network.name === opened} onOpen={handleOpen} />
-          ))}
-          {!filteredNetworks.length && (
-            <Box
-              sx={{
-                background: '#fff',
-                padding: '2rem',
-                borderRadius: '1rem',
-                color: '#000',
-              }}
-            >
-              {t('common:noMatch')}
-            </Box>
-          )}
-        </StyledSectionLimit>
-        <StyledSectionLimit className="scrollToTop">
-          <Fab onClick={handleScrollToTop}>
-            <KeyboardArrowUpIcon height={36} />
-          </Fab>
-        </StyledSectionLimit>
+          </StyledSearchBarBox>
+          <StyledNetworksBox>
+            {filteredNetworks.map((network) => (
+              <NetworkBox key={network.name} network={network} isOpened={network.name === opened} onOpen={handleOpen} />
+            ))}
+            {!filteredNetworks.length && (
+              <Box
+                sx={{
+                  background: '#fff',
+                  padding: '2rem',
+                  borderRadius: '1rem',
+                  color: '#000',
+                }}
+              >
+                {t('common:noMatch')}
+              </Box>
+            )}
+          </StyledNetworksBox>
+          <StyledScrollTopBox>
+            <StyledFab onClick={handleScrollToTop}>
+              <KeyboardArrowUpIcon width={36} height={36} />
+            </StyledFab>
+          </StyledScrollTopBox>
+        </SectionLimit>
       </StyledSectionBox>
     </Layout>
   );

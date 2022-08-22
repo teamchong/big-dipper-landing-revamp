@@ -22,7 +22,7 @@ const NetworkMenuLink: FC<NetworkMenuLinkProps> = ({ link }) => {
           <Typography variant="subtitle1">{chainId}</Typography>
         </ListItemText>
         <ListItemIcon>
-          <KeyboardArrowRightIcon height={16} />
+          <KeyboardArrowRightIcon width={16} height={16} />
         </ListItemIcon>
       </ListItemButton>
     </Link>

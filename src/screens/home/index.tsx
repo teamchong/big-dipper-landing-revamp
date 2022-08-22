@@ -3,15 +3,23 @@ import type { FC } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Fab from '@mui/material/Fab';
 import Image from 'next/image';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import loadNetworkList from '@utils/load-network-list';
 import handleScrollToTop from '@utils/handleScrollToTop';
 import { equals } from 'ramda';
+import SectionLimit from '@src/components/section-limit';
 import {
-  StyledLayout, StyledSectionLimit, StyledSectionBox, StyledImageBox,
+  StyledFab,
+  StyledLayout,
+  StyledLogoBox,
+  StyledContentBox,
+  StyledNetworksBox,
+  StyledScrollTopBox,
+  StyledSectionBox,
+  StyledImageBox,
+  StyledSearchBarBox,
+  StyledTypography,
 } from './styles';
 import Slide1 from './components/slide1';
 import SearchBox from './components/search-box';
@@ -36,39 +44,41 @@ const Home: FC<HomeProps> = ({ networkList }) => {
   return (
     <StyledLayout>
       <StyledSectionBox>
-        <StyledSectionLimit className="logo">
-          <Box className="slider">
-            <Slider dots slidesToScroll={1} slidesToShow={1}>
-              <Slide1 />
-              <Slide1 />
-            </Slider>
-          </Box>
-          <StyledImageBox>
-            <Image
-              src="/images/big-dipper-transparent.png"
-              alt="Big Dipper"
-              layout="intrinsic"
-              width="482"
-              height="452"
-            />
-          </StyledImageBox>
-        </StyledSectionLimit>
-        <StyledSectionLimit className="content">
-          <Box className="searchBar">
-            <Typography variant="h3">{t('supportedNetworks')}</Typography>
-            <SearchBox networks={sortedNetworks} />
-          </Box>
-        </StyledSectionLimit>
-        <StyledSectionLimit className="networks">
-          {sortedNetworks.map((network) => (
-            <NetworkBox key={network.name} network={network} />
-          ))}
-        </StyledSectionLimit>
-        <StyledSectionLimit className="scrollToTop">
-          <Fab onClick={handleScrollToTop}>
-            <KeyboardArrowUpIcon height={36} />
-          </Fab>
-        </StyledSectionLimit>
+        <SectionLimit>
+          <StyledLogoBox>
+            <Box className="slider">
+              <Slider dots slidesToScroll={1} slidesToShow={1}>
+                <Slide1 />
+                <Slide1 />
+              </Slider>
+            </Box>
+            <StyledImageBox>
+              <Image
+                src="/images/big-dipper-transparent.png"
+                alt="Big Dipper"
+                layout="intrinsic"
+                width="482"
+                height="452"
+              />
+            </StyledImageBox>
+          </StyledLogoBox>
+          <StyledContentBox>
+            <StyledSearchBarBox>
+              <StyledTypography variant="h3">{t('supportedNetworks')}</StyledTypography>
+              <SearchBox networks={sortedNetworks} />
+            </StyledSearchBarBox>
+          </StyledContentBox>
+          <StyledNetworksBox>
+            {sortedNetworks.map((network) => (
+              <NetworkBox key={network.name} network={network} />
+            ))}
+          </StyledNetworksBox>
+          <StyledScrollTopBox>
+            <StyledFab onClick={handleScrollToTop}>
+              <KeyboardArrowUpIcon width={36} height={36} />
+            </StyledFab>
+          </StyledScrollTopBox>
+        </SectionLimit>
       </StyledSectionBox>
     </StyledLayout>
   );

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`404 matches snapshot 1`] = `
-.emotion-0 {
+.emotion-0>div>div:nth-of-type(2) {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10,8 +10,6 @@ exports[`404 matches snapshot 1`] = `
   -webkit-flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  min-height: 400px;
-  gap: 40px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -20,9 +18,41 @@ exports[`404 matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  height: 100%;
+}
+
+.emotion-0 img {
+  margin-top: -20px!important;
+  margin-bottom: -100px!important;
+}
+
+.emotion-0 h3 {
+  font-size: 1.2rem;
+}
+
+.emotion-0 h4 {
+  font-size: 0.95rem;
+}
+
+@media (min-width:768px) {
+  .emotion-0 h3 {
+    font-size: 2rem;
+  }
+
+  .emotion-0 h4 {
+    font-size: 1.4rem;
+  }
 }
 
 .emotion-1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: SFPro,Arial,sans-serif;
+  line-height: 1.167;
+}
+
+.emotion-2 {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
@@ -32,23 +62,44 @@ exports[`404 matches snapshot 1`] = `
 
 <div>
   <div
+    class="emotion-0"
     data-testid="Layout"
   >
-    <div
-      class="emotion-0"
-      data-testid="SectionBox"
+    <span
+      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
     >
-      <h4
-        class="MuiTypography-root MuiTypography-h4 title emotion-1"
+      <span
+        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
       >
-        404
-      </h4>
-      <a
-        href="/"
-      >
-        goBackHome
-      </a>
-    </div>
+        <img
+          alt=""
+          aria-hidden="true"
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27380%27%20height=%27380%27/%3e"
+          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+        />
+      </span>
+      <img
+        alt="404"
+        data-nimg="intrinsic"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+      />
+      <noscript />
+    </span>
+    <h3
+      class="MuiTypography-root MuiTypography-h3 emotion-1"
+    >
+      404
+    </h3>
+    <p>
+       
+    </p>
+    <h4
+      class="MuiTypography-root MuiTypography-h4 emotion-2"
+    >
+      404Description
+    </h4>
   </div>
 </div>
 `;
