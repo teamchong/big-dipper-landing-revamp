@@ -18,5 +18,7 @@
   "privacyPolicy": "Privacy Policy",
   "productOf": "A Product of <0>Forbole</0>",
   "slider1Header": "Real-time Interchain Explorer",
-  "slider1Description": "View real-time status of different networks"
+  "slider1Description": "View real-time status of different networks",
+  "404": "404 - Page Not Found",
+  "goBackHome": "Go back home"
 }
