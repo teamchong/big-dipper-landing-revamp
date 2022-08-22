@@ -17,6 +17,9 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_OPTIONS "--max-old-space-size=8192"
+ENV NEXT_PUBLIC_NETWORK_LIST_API https://raw.githubusercontent.com/forbole/big-dipper-networks/main/networks.json
+ENV NEXT_PUBLIC_GRAPHQL_URL '{"Agoric":"https://gql.agoric.forbole.com/v1/graphql","AssetMantle":"https://gql.assetmantle.forbole.com/v1/graphql","Band Protocol":"https://gql.band.forbole.com/v1/graphql","Bitsong":"https://gql.bitsong.forbole.com/v1/graphql","Cheqd":"https://explorer-gql.cheqd.io/v1/graphql","Comdex":"https://gql.comdex.forbole.com/v1/graphql","Cosmos Hub":"https://gql.cosmos.forbole.com/v1/graphql","Crescent":"https://gql.crescent.forbole.com/v1/graphql","Desmos":"https://gql.desmos.forbole.com/v1/graphql","e-Money":"https://gql.emoney.forbole.com/v1/graphql","Evmos":"https://gql.evmos.forbole.com/v1/graphql","Flow":"https://gql.flow.forbole.com/v1/graphql","LikeCoin":"https://gql.likecoin.forbole.com/v1/graphql","Osmosis":"https://gql.osmosis.forbole.com/v1/graphql","Provenance":"https://gql.provenance.forbole.com/v1/graphql","Regen Network":"https://gql.regen.forbole.com/v1/graphql","Rizon":"https://gql.rizon.forbole.com/v1/graphql","Sifchain":"https://gql.sifchain.forbole.com/v1/graphql","Solana":"https://gql.solana.forbole.com/v1/graphql"}'
 
 # Add PM2
 
