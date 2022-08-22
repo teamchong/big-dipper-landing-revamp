@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
-import getUrlFromNetwork from '@src/utils/get-url-from-network';
 import type { SearchBoxProps } from './types';
 import {
   StyledAutocomplete,
@@ -61,10 +60,9 @@ function renderOption(props: HTMLAttributes<HTMLLIElement>, option: unknown) {
  */
 function handleChange(_event: unknown, value: unknown) {
   if (value) {
-    const { network } = value as { network: Network };
-    const url = getUrlFromNetwork(network);
-    if (url) {
-      window.open(url, '_top');
+    const { link } = value as { link: NetworkLink };
+    if (link?.url) {
+      window.open(link.url, '_top');
     }
   }
 }
