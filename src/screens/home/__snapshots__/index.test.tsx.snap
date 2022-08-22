@@ -629,6 +629,11 @@ exports[`Dummy Test matches snapshot 1`] = `
   animation: animation-0 3s infinite ease;
 }
 
+.emotion-51 img {
+  max-width: 100%;
+  height: auto;
+}
+
 .emotion-52 {
   padding: 0 24px;
 }
@@ -1926,28 +1931,12 @@ a:hover .emotion-69 {
               <div
                 class="MuiBox-root emotion-51"
               >
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-                >
-                  <span
-                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27482%27%20height=%27452%27/%3e"
-                      style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-                    />
-                  </span>
-                  <img
-                    alt="Big Dipper"
-                    data-nimg="intrinsic"
-                    decoding="async"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                  />
-                  <noscript />
-                </span>
+                <img
+                  alt="Big Dipper"
+                  height="452"
+                  src="/images/big-dipper-transparent.png"
+                  width="482"
+                />
               </div>
             </div>
             <div
@@ -2054,28 +2043,12 @@ a:hover .emotion-69 {
                     <div
                       class="MuiBox-root emotion-35"
                     >
-                      <span
-                        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-                      >
-                        <span
-                          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-                        >
-                          <img
-                            alt=""
-                            aria-hidden="true"
-                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"
-                            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-                          />
-                        </span>
-                        <img
-                          alt="Cosmos Hub"
-                          data-nimg="intrinsic"
-                          decoding="async"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                        />
-                        <noscript />
-                      </span>
+                      <img
+                        alt="Cosmos Hub"
+                        height="30"
+                        src="https://raw.githubusercontent.com/forbole/big-dipper-networks/main/logos/cosmoshub.svg?sanitize=true"
+                        width="30"
+                      />
                       <p
                         class="MuiTypography-root MuiTypography-body1 emotion-71"
                       >
@@ -2094,28 +2067,12 @@ a:hover .emotion-69 {
                       />
                     </span>
                   </div>
-                  <span
-                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-                  >
-                    <span
-                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-                    >
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"
-                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-                      />
-                    </span>
-                    <img
-                      alt="Cosmos Hub"
-                      data-nimg="intrinsic"
-                      decoding="async"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    />
-                    <noscript />
-                  </span>
+                  <img
+                    alt="Cosmos Hub"
+                    height="30"
+                    src="https://raw.githubusercontent.com/forbole/big-dipper-networks/main/logos/cosmoshub.svg?sanitize=true"
+                    width="30"
+                  />
                   Cosmos Hub
                 </a>
               </div>
