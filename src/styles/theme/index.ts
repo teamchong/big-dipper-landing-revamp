@@ -25,7 +25,7 @@ export const common: ThemeOptions = {
           font-style: normal;
           font-display: swap;
           font-weight: 400;
-          src: url("/fonts/SF-Pro-Text-Regular.woff2") format('woff2');
+          src: url(${process.env.BASE_PATH ?? ''}/fonts/SF-Pro-Text-Regular.woff2) format('woff2');
         }
       `,
     },

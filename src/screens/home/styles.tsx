@@ -8,13 +8,11 @@ import SectionBox from '@src/components/section-box';
 
 /* A styled component. */
 export const StyledLayout = styled(Layout)(({ theme }) => ({
-  backgroundImage:
-    'radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(../../../../public/images/background/back.png)',
+  backgroundImage: `radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d), url(${process.env.BASE_PATH ?? ''}/images/background/back.png)`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '50% 0',
   [theme.breakpoints.up('md')]: {
-    backgroundImage:
-      'radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d), url(../../../../images/background/back.png)',
+    backgroundImage: `radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d), url(${process.env.BASE_PATH ?? ''}/images/background/back.png)`,
   },
 }));
 
@@ -28,7 +26,7 @@ export const StyledLogoBox = styled(Box)(({ theme }) => ({
   width: '100%',
   textAlign: 'center',
   position: 'relative',
-  background: 'url("/images/background/stars.png")',
+  background: `url(${process.env.BASE_PATH ?? ''}/images/background/stars.png)`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: '95% auto',
   backgroundPosition: '50% 50%',

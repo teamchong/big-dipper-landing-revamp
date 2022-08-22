@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "NODE_ENV=test jest",
-    "export": "BASE_PATH=/big-dipper-landing-revamp next build && BASE_PATH=/big-dipper-landing-revamp next export -o docs"
+    "export": "BASE_PATH=/big-dipper-landing-revamp next build && BASE_PATH=/big-dipper-landing-revamp next export -o docs; touch docs/.nojekyll",
+    "preview:staging": "git branch -d preview/staging -f && git branch preview/staging && git switch preview/staging && git add . && git commit -m 'Publish docs' && git push --set-upstream origin preview/staging --force"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.1",

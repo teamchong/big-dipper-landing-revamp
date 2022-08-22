@@ -9,7 +9,7 @@ const FourOhFour = () => {
 
   return (
     <StyledLayout>
-      <img alt={t('404')} src="/images/404-unicorn.svg" width={380} height={380} />
+      <img alt={t('404')} src={`${process.env.BASE_PATH ?? ''}/images/404-unicorn.svg`} width={380} height={380} />
       <Typography variant="h3">
         {t('404')}
       </Typography>

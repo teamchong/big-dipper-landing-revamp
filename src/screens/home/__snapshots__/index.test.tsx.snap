@@ -58,7 +58,7 @@ exports[`Dummy Test matches snapshot 1`] = `
   background-repeat: no-repeat;
   -webkit-background-position: 50% 0;
   background-position: 50% 0;
-  background-image: radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d),url(../../../../public/images/background/back.png);
+  background-image: radial-gradient(300vw 100vh at 50% 50vh, rgba(212,112,151,0), #30177d),url(/images/background/back.png);
   background-repeat: no-repeat;
   -webkit-background-position: 50% 0;
   background-position: 50% 0;
@@ -72,12 +72,12 @@ exports[`Dummy Test matches snapshot 1`] = `
 
 @media (min-width:768px) {
   .emotion-0 {
-    background-image: radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d),url(../../../../images/background/back.png);
+    background-image: radial-gradient(512px 512px at 50% 300px, rgba(212,112,151,0), #30177d),url(/images/background/back.png);
   }
 }
 
 .emotion-1 {
-  background: url(../../../public/images/background/footer.svg);
+  background: url(/images/background/footer.svg);
   background-repeat: no-repeat;
   -webkit-background-position: 50% 100%;
   background-position: 50% 100%;
@@ -513,7 +513,7 @@ exports[`Dummy Test matches snapshot 1`] = `
   width: 100%;
   text-align: center;
   position: relative;
-  background: url("/images/background/stars.png");
+  background: url(/images/background/stars.png);
   background-repeat: no-repeat;
   -webkit-background-size: 95% auto;
   background-size: 95% auto;

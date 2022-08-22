@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/SF-Pro-Text-Regular.woff2"
+            href={`${process.env.BASE_PATH ?? ''}/fonts/SF-Pro-Text-Regular.woff2`}
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

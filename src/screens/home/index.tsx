@@ -53,7 +53,7 @@ const Home: FC<HomeProps> = ({ networkList }) => {
             </Box>
             <StyledImageBox>
               <img
-                src="/images/big-dipper-transparent.png"
+                src={`${process.env.BASE_PATH ?? ''}/images/big-dipper-transparent.png`}
                 alt="Big Dipper"
                 width="482"
                 height="452"
