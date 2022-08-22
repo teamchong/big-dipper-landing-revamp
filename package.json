@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "NODE_ENV=test jest",
-    "preview:staging": "BASE_PATH=/big-dipper-landing-revamp next build && next export -o docs && git add . && git commit -m 'Update docs' && git push origin/preview/staging --force"
+    "preview:staging": "BASE_PATH=/big-dipper-landing-revamp next build && next export -o docs && git add . && git commit -m 'Update docs' && git push origin $(git branch | grep \\*):preview/staging --force"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.1",
