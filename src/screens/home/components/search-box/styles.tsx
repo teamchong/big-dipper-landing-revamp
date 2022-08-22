@@ -18,10 +18,12 @@ export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
 }));
 
 export const StyledPopper = styled(Popper)(({ theme }) => ({
+  zIndex: '2001 !important',
   '& .MuiPaper-root': {
     backgroundColor: alpha(theme.palette.background.mobileMenu, 0.9),
     borderRadius: theme.spacing(1),
-    zIndex: 1,
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
 }));
 
