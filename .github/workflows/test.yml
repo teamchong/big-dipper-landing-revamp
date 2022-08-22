@@ -36,7 +36,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: Copy .env.sample to .env
+      run: cp .env.sample .env
     - name: Install modules
       run: npm ci
     - name: Run build check
+      env:
+        NODE_OPTIONS: "--max-old-space-size=8192"
       run: npm run build
