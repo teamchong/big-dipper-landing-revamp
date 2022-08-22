@@ -31,18 +31,11 @@ import {
 } from './styles';
 
 function getTabIndexFromPath(path: string) {
-  switch (path) {
-    case '/all-networks#tab=Mainnet':
-      return AllNetworksTab.Mainnet;
-    case '/all-networks#tab=Testnet':
-      return AllNetworksTab.Testnet;
-    case '/all-networks#tab=Devnet':
-      return AllNetworksTab.Devnet;
-    case '/all-networks#tab=Retired':
-      return AllNetworksTab.Retired;
-    default:
-      return AllNetworksTab.All;
-  }
+  if (/\/all-networks#tab=Mainnet/.test(path)) return AllNetworksTab.Mainnet;
+  if (/\/all-networks#tab=Testnet/.test(path)) return AllNetworksTab.Testnet;
+  if (/\/all-networks#tab=Devnet/.test(path)) return AllNetworksTab.Devnet;
+  if (/\/all-networks#tab=Retired/.test(path)) return AllNetworksTab.Retired;
+  return AllNetworksTab.All;
 }
 
 const AllNetworks: FC<AllNetworksProps> = ({ networkList }) => {
